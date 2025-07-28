@@ -1,10 +1,15 @@
-<script setup></script>
+
+<script setup>
+import Header from "./layouts/Header.vue";
+</script>
 
 <template>
-  <header></header>
+  <Header>
+
+  </Header>
 
   <main>
-    <div class="p-4 bg-blue-500 text-white rounded-lg">
+    <div >
       Chào mừng đến với sắc đẹp 24h
     </div>
   </main>
