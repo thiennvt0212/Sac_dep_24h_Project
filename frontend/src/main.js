@@ -3,4 +3,12 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import {faCircleDollarToSlot } from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+library.add(faCircleDollarToSlot)
+
+const app = createApp(App)
+app.component('font-awesome-icon', FontAwesomeIcon)
+app.mount('#app')
