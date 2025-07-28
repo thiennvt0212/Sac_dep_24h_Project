@@ -1,18 +1,11 @@
-
 <script setup>
 import Header from "./layouts/Header.vue";
+import Home from "./Pages/Home.vue";
 </script>
 
 <template>
-  <Header>
-
-  </Header>
-
-  <main>
-    <div >
-      Chào mừng đến với sắc đẹp 24h
-    </div>
-  </main>
+  <Header> </Header>
+  <Home />
 </template>
 
 <style scoped></style>
