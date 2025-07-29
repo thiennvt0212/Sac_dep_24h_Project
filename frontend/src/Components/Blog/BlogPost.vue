@@ -41,7 +41,31 @@ defineProps({
                 <a href="#">{{ post.title }}</a>
             </h4>
             <p class="mt-2 mb-3 font-light">{{ post.description }}</p>
-            <a href="#" class="uppercase text-[14px] tracking-widest hover:text-[#b67e53] hover:bg-red-50 leading-1 transition ease delay-75">Xem thêm</a>
+            <a href="#" class="hover-underline relative inline-block uppercase text-[14px] tracking-widest hover:text-[#b67e53] leading-1 transition ease delay-75">Xem thêm</a>
         </div>
     </div>
 </template>
+<style scoped>
+
+
+.hover-underline::after {
+  /* Tạo thanh gạch chân bằng ::after */
+  content: '';
+  position: absolute;
+  bottom: 5px; /* cách chữ một chút */
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(182, 126, 83, 0.3); /* cùng màu với chữ */
+  
+  /* Ban đầu: thanh co lại (không thấy) */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Khi hover: thanh mở rộng từ trái sang phải */
+.hover-underline:hover::after {
+  transform: scaleX(1);
+}
+</style>
