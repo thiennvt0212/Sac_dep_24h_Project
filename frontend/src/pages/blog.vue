@@ -9,7 +9,7 @@ import BlogSidebar from '@/Components/Blog/BlogSidebar.vue';
     <h1>Blog pages</h1>
     <div class="container mx-auto px-4">
         <div class="flex flex-wrap -mx-4">
-            <div class="w-full lg:w-9/12 px-4 bg-red-600">
+            <div class="w-full lg:w-9/12 px-4">
                 <BlogList />
             </div>
 

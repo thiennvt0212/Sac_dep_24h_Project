@@ -164,7 +164,7 @@ const displayedPosts = computed(() => {
 <template>
     
     <div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap 6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div v-for="post in displayedPosts" :key="post.id">
                 <blog-post :post="post" />
             </div>
