@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+.action-input {
+  border-color: black;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.action-input:focus  {
+  border-color: #B67E53 ; 
+  outline: none;
+}
+
+.hover-primary {
+
+  transition: all 0.3s ease;
+}
+.hover-primary:hover {
+  color: #B67E53 ; 
+}
+
+.hover-modal{
+  transition: all 0.3s ease;
+}
+
+.hover-text-primary {
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+.hover-text-primary:hover {
+  color: #B67E53 ; 
+}
+
+.hover-btn-primary {
+  position: relative;
+  color: white;
+  transition: background-position 0.2s ease, color 0.2s ease;
+}
+.hover-btn-primary:hover {
+  background-position: top;
+  background-image: linear-gradient(to top, #B67E53 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: bottom;
+  color: white; 
+}
+
 
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
