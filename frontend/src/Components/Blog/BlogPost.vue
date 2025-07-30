@@ -15,7 +15,7 @@ defineProps({
                 {{ post.date }}
             </p>
         </div> -->
-        <div class="relative group w-full h-[490px] overflow-hidden rounded-lg">
+        <div class="relative group w-full h-[490px] overflow-hidden rounded-lg cursor-pointer">
             <!-- Container cố định, không di chuyển -->
             <div class="w-full h-full relative">
                 <!-- Ảnh bên trong sẽ dịch chuyển -->
@@ -29,11 +29,11 @@ defineProps({
             </div>
 
         
-        <p class="absolute top-4 left-0 bg-bgDate py-2 px-4 text-xs tracking-widest 
-                    group-hover:bg-bgDateHover group-hover:text-white 
-                    transition duration-300 ease">
-            {{ post.date }}
-        </p>
+            <p class="absolute top-4 left-0 bg-bgDate py-2 px-4 text-xs tracking-widest 
+                        group-hover:bg-bgDateHover group-hover:text-white 
+                        transition duration-300 ease">
+                {{ post.date }}
+            </p>
         </div>
         <div>
             <a href="#" class="text-xs uppercase tracking-widest hover:text-[#b67e53] font-light transition ease delay-75 mt-10 mb-6 inline-block">{{ post.type }}</a>
@@ -45,27 +45,3 @@ defineProps({
         </div>
     </div>
 </template>
-<style scoped>
-
-
-.hover-underline::after {
-  /* Tạo thanh gạch chân bằng ::after */
-  content: '';
-  position: absolute;
-  bottom: 5px; /* cách chữ một chút */
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: rgba(182, 126, 83, 0.3); /* cùng màu với chữ */
-  
-  /* Ban đầu: thanh co lại (không thấy) */
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease-in-out;
-}
-
-/* Khi hover: thanh mở rộng từ trái sang phải */
-.hover-underline:hover::after {
-  transform: scaleX(1);
-}
-</style>

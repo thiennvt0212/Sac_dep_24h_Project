@@ -10,23 +10,23 @@ const props = defineProps({
 <template>
     <div>
         <div>
-            <h3>Danh mục</h3>
-            <ul>
-                <li><a href="#">Beauty Serum <span>(4)</span></a></li>
-                <li><a href="#">CBD Cookies <span>(4)</span></a></li>
-                <li><a href="#">CBD Pastries <span>(4)</span></a></li>
-                <li><a href="#">Face Cream <span>(4)</span></a></li>
-                <li><a href="#">Hemp Edibles <span>(4)</span></a></li>
-                <li><a href="#">Medication <span>(4)</span></a></li>
+            <h3 class="text-[22px] border-b-[1px] border-solid border-black pb-2">Danh mục</h3>
+            <ul class="mt-7">
+                <li class="mt-2 "><a class="font-light hover:text-[#b67e53]" href="#">Beauty Serum </a><span class="font-light">(4)</span></li>
+                <li class="mt-2 "><a class="font-light hover:text-[#b67e53]" href="#">CBD Cookies </a><span class="font-light">(4)</span></li>
+                <li class="mt-2 "><a class="font-light hover:text-[#b67e53]" href="#">CBD Pastries </a><span class="font-light">(4)</span></li>
+                <li class="mt-2 "><a class="font-light hover:text-[#b67e53]" href="#">Face Cream </a><span class="font-light">(4)</span></li>
+                <li class="mt-2 "><a class="font-light hover:text-[#b67e53]" href="#">Hemp Edibles </a><span class="font-light">(4)</span></li>
+                <li class="mt-2 "><a class="font-light hover:text-[#b67e53]" href="#">Medication </a><span class="font-light">(4)</span></li>
             </ul>
         </div>
 
-        <div>
-            <h3>Bài viết mới nhất</h3>
-            <div>
-                <div v-for="post in props.posts.slice(0, 5)" :key="post.id" class="mb-6 flex justify-between items-center pb-2 border-b-2 border-dashed">
+        <div class="mt-10">
+            <h3 class="text-[22px] border-b-[1px] border-solid border-black pb-2">Bài viết mới nhất</h3>
+            <div class="mt-7">
+                <div v-for="post in props.posts.slice(0, 5)" :key="post.id" class="mb-6 flex justify-between items-center pb-2 border-b-2 border-dashed cursor-pointer">
                     <img :src="post.image" alt="" class="w-20 h-20 object-cover mb-2">
-                    <p class="text-xl px-3 mb-2">{{ post.title }}</p>
+                    <p class="text-xl px-3 mb-2 hover:text-[#b67e53] transition ease delay-75">{{ post.title }}</p>
                 </div>
             </div>
             <div class="flex justify-end">
@@ -34,27 +34,24 @@ const props = defineProps({
 
             </div>
         </div>
+
+        <div class="mt-10">
+            <h3 class="text-[22px] border-b-[1px] border-solid border-black pb-2">Instagram</h3>
+            <div class="mt-7">
+                <div class="grid grid-cols-3 gap-3">
+                    <a href="#" v-for="post in props.posts.slice(6,12)" :key="post.id">
+                        <img :src="post.image" alt="" class="w-full h-30 object-cover">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10">
+            <h3 class="text-[22px] border-b-[1px] border-solid border-black pb-2">Từ khoá phổ biến</h3>
+            <div class="mt-7">
+                <a class="bg-[#3a3737] mr-3 py-2 px-4 text-white font-light text-[15px] hover:bg-[#b67e53] transition-all ease-in delay-75" href="#">Edible</a>
+                <a class="bg-[#3a3737] py-2 px-4 text-white font-light text-[15px] hover:bg-[#b67e53] transition-all ease-in delay-75" href="#">Non-Edible</a>
+            </div>
+        </div>
     </div>
 </template>
-<style scoped>
-.hover-underline::after {
-  /* Tạo thanh gạch chân bằng ::after */
-  content: '';
-  position: absolute;
-  bottom: 5px; /* cách chữ một chút */
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: rgba(182, 126, 83, 0.3); /* cùng màu với chữ */
-  
-  /* Ban đầu: thanh co lại (không thấy) */
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease-in-out;
-}
-
-/* Khi hover: thanh mở rộng từ trái sang phải */
-.hover-underline:hover::after {
-  transform: scaleX(1);
-}
-</style>

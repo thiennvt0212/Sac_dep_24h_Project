@@ -38,7 +38,6 @@ const changePage = (page) => {
             <li>
                 <button
                     @click="changePage(currentPage - 1)"
-                    :disabled="currentPage === 1"
                     class="px-3 py-2 "
                     :class="[
                         currentPage === 1 
@@ -70,7 +69,6 @@ const changePage = (page) => {
             <li>
                 <button
                 @click="changePage(currentPage + 1)"
-                :disabled="currentPage === totalPages"
                 class="px-3 py-2"
                 :class="[
                     currentPage === totalPages

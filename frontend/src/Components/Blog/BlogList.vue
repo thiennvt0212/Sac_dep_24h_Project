@@ -23,7 +23,7 @@ const displayedPosts = computed(() => {
   return props.posts.slice(startIndex, endIndex)
 })
 
-// Methods
+
 const handlePageChange = (page) => {
   currentPage.value = page
   // Scroll lên đầu trang
