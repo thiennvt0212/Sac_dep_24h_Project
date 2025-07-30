@@ -9,6 +9,13 @@ import {
   faChevronRight,
   faChevronLeft,
   faChevronDown,
+  faPhone,
+  faEnvelopeOpen,
+  faPlay,
+  faTruckFast,
+  faHeadset,
+  faCartShopping,
+  faTruckRampBox,
 } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import AOS from "aos";
@@ -16,7 +23,19 @@ import "aos/dist/aos.css";
 
 AOS.init();
 
-library.add(faCircleDollarToSlot, faChevronRight, faChevronLeft, faChevronDown);
+library.add(
+  faCircleDollarToSlot,
+  faChevronRight,
+  faChevronLeft,
+  faChevronDown,
+  faPhone,
+  faEnvelopeOpen,
+  faPlay,
+  faTruckFast,
+  faHeadset,
+  faCartShopping,
+  faTruckRampBox
+);
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
