@@ -13,6 +13,7 @@
         <p class="pl-2 text-[12px] font-normal text-[var(--vt-c-white)] hover-text-primary cursor-pointer">(+84) 0313-728-397</p>
       </div>
       <div class="flex items-center ml-4 mr-4">
+
         <font-awesome-icon :icon="['fas', 'envelope']" class="text-[var(--vt-c-white)]"/>
         <p class="pl-2 text-[12px] font-normal text-[var(--vt-c-white)] hover-text-primary cursor-pointer">info@themona.global</p>
       </div>
@@ -25,10 +26,10 @@
         <p class="pl-1 pr-1 font-medium ">ĐĂNG NHẬP</p>
         </router-link>
       </div>
-      
       <div class="flex items-center ml-4 mr-4 hover-text-primary cursor-pointer">
         <font-awesome-icon :icon="['far', 'heart']" />
         <p class="pl-1 pr-1 font-medium">YÊU THÍCH</p>
+
       </div>
     </div>
   </div>

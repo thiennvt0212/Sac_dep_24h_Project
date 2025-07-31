@@ -1,3 +1,4 @@
+
 <script setup>
 import { ref } from "vue";
 import logo from "../assets/Image/logo-2-e1729751913411.png";
@@ -34,6 +35,7 @@ const isHovered = ref(false);
             Giới thiệu
           </li>
           </router-link>
+          <router-link to="/products">
           <li
             class="flex flex-row pt-[8px] pr-[18px] pb-[8px] pl-[18px] mt-4 mb-4 ml-2 mr-2 rounded-md font-medium hover-btn-primary items-center after:absolute after:left-0 after:bottom-[-24px] after:w-full after:h-8 after:bg-transparent "
           >
@@ -43,7 +45,7 @@ const isHovered = ref(false);
               class="ml-[4px] text-[10px]"
             />
           </li>
-
+</router-link>
           <router-link to="/news">
           <li
             class="flex flex-row pt-[8px] pr-[18px] pb-[8px] pl-[18px] mt-4 mb-4 ml-2 mr-2 rounded-md font-medium hover-btn-primary"
@@ -86,3 +88,4 @@ const isHovered = ref(false);
 </template>
 
 <style></style>
+
