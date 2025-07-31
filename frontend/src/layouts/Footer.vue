@@ -25,19 +25,19 @@ import logo from "../assets/Image/logo-1-black.png";
           </div>
           <div>
             <ul>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Trang chủ</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Danh mục</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Giới thiệu</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Tin tức</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Liên hệ</a>
               </li>
             </ul>
@@ -51,19 +51,19 @@ import logo from "../assets/Image/logo-1-black.png";
           </div>
           <div>
             <ul>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Điều khoản dịch vụ</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Thông tin giao hàng</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Theo dõi đơn hàng</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Phương thức thanh toán</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Vận chuyển và giao hàng</a>
               </li>
             </ul>
@@ -77,19 +77,19 @@ import logo from "../assets/Image/logo-1-black.png";
           </div>
           <div>
             <ul>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Chính sách quyền riêng tư</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Chính sách vận chuyển</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Chính sách giao hàng</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Chính sách thanh toán</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>Chính sách đổi trả</a>
               </li>
             </ul>
@@ -103,7 +103,7 @@ import logo from "../assets/Image/logo-1-black.png";
           </div>
           <div>
             <ul>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>
                   <font-awesome-icon
                     :icon="['fas', 'location-dot']"
@@ -111,13 +111,13 @@ import logo from "../assets/Image/logo-1-black.png";
                   />Địa chỉ: 1073/23 CMT8, p.7, Q.Tân Bình, TP.HCM
                   </a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a><font-awesome-icon
                     :icon="['fas', 'phone-volume']"
                     class="pr-[5px]"
                   />(+84) 0313-728-397</a>
               </li>
-              <li class="pt-[6px] pb-[6px] font-light hover-primary">
+              <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a><font-awesome-icon
                     :icon="['fas', 'envelope']"
                     class="pr-[5px]"

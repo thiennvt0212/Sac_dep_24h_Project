@@ -2,16 +2,16 @@
 import { ref } from 'vue'
 import imageCard1 from '../assets/Image/CA-bnr-1.webp'
 import imageCard2 from '../assets/Image/CA-bnr-2.webp'
-import bgImage from '../assets/Image/homeHeadImg.jpg';
+import bgImage from '../assets/Image/banner.png';
 
 const showLoginPassword = ref(false)
 const showRegisterPassword = ref(false)
 </script>
 
 <template>
- 
+  <img :src="bgImage" alt="banner"/>
   <div class="min-h-screen bg-[#fdf3f2] pt-[100px] pb-[20px]">
-    <div :style="{ backgroundImage: `url(${bgImage})` }">
+    
     <div class=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-[80px] pr-[30px] pl-[30px]">
       <div>
         <h2 class="text-2xl font-semibold mb-6">Đăng nhập</h2>
@@ -135,6 +135,6 @@ const showRegisterPassword = ref(false)
     </div>
   </div>
   </div>
- </div>
+ 
    
 </template>

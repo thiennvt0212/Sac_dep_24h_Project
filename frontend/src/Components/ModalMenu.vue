@@ -4,7 +4,7 @@ import image2 from "../assets/Image/image-modal-menu-2.webp";
 </script>
 
 <template>
-    <div class="flex flex-row  pt-[40px] pb-[40px] border-t-[1px] border-t-[var(--button-color)] bg-white ">
+    <div class="flex flex-row  pt-[40px] pb-[40px] border-t-[1px] border-t-[var(--button-color)] bg-white absolute left-0 z-10 right-0 top-[100px]">
         <div class="basis-1/5 flex p-[10px] flex flex-col pl-[20px] pr-[20px]">
             <div >
                 <h3 class="text-[18px] pb-[10px] border-b-[1px] border-black border-dashed font-medium text-black">Chăm sóc gia mặt</h3>
