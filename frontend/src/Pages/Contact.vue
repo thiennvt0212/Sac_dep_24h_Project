@@ -1,6 +1,20 @@
 
 <template>
-<img :src="bgImage" alt="banner"/>
+  <div
+    class="relative bg-cover bg-center h-[500px]"
+    :style="{ backgroundImage: `url(${bannerImage})` }"
+  >
+    <!-- Tiêu đề banner -->
+    <div
+      class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center"
+    >
+      <h1 class="text-white text-5xl font-bold mb-2">Sản Phẩm</h1>
+      <p class="text-white text-sm mt-2">
+        <a href="/" class="hover:underline text-white">TRANG CHỦ</a> /
+        <span class="text-gray-300">SẢN PHẨM</span>
+      </p>
+    </div>
+  </div>
   <section class="bg-pink-50 py-12">
     <div class="max-w-5xl mx-auto px-4">
       <div class="flex flex-col items-center mb-2">
