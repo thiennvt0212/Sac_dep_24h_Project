@@ -17,8 +17,15 @@ export default {
       },
       animation: {
         bounceOil: "bounceOil 3s infinite",
+
+      backgroundColor: {
+        'bgDate': '#e7eadb',
+        'bgDateHover': '#86b85e'
       },
     },
   },
   plugins: [],
-};
+}
+
+}
+

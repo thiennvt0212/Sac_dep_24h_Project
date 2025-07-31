@@ -1,7 +1,7 @@
 import "./assets/main.css";
-
 import { createApp } from "vue";
 import App from "./App.vue";
+
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
@@ -22,6 +22,8 @@ import {
   faTruckFast,
   faHeadset,
   faTruckRampBox,
+  faArrowLeft,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -52,12 +54,14 @@ library.add(
   faTruckFast,
   faHeadset,
   faCartShopping,
-  faTruckRampBox
+  faTruckRampBox,
+  faArrowLeft,
+  faArrowRight
 );
-
-
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(router)
 app.mount("#app");
+
+
