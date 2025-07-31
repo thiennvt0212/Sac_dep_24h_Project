@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import Header from "./layouts/Header.vue";
-import Blog from "./pages/blog.vue";
+import Blog from "./Components/news.vue";
 
 </script>
 
@@ -15,9 +15,9 @@ import Blog from "./pages/blog.vue";
       Chào mừng đến với sắc đẹp 24h
     </div>
 
-    <Blog />
-  </main>
 
+  </main>
+  <Blog />
  
 </template>
 
