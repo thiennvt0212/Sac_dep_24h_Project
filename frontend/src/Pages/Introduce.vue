@@ -4,7 +4,7 @@
         <div
         class="absolute top-0 left-0 w-screen h-full bg-cover bg-center bg-no-repeat -z-20"
         :style="{
-            backgroundImage: `url(${banner})`,
+            backgroundImage: `url(${bgImage})`,
             backgroundAttachment: 'scroll',
             backgroundPosition: 'center center',
             backgroundSize: 'cover',
@@ -15,14 +15,14 @@
         <div class="absolute inset-0 w-screen h-full bg-black opacity-30 -z-10"></div>
 
         <!-- Content -->
-        <div class="relative z-10 flex flex-col items-center justify-center w-full">
+        <!-- <div class="relative z-10 flex flex-col items-center justify-center w-full">
             <h1 class="text-6xl font-light text-white mb-30 tracking-wide capitalize pb-8 ">Giới Thiệu</h1>
             <div class="text-base flex justify-center items-center space-x-2 tracking-widest">
                 <a href="https://sacdep24.monamedia.net/" class="hover:underline opacity-80 text-white capitalize pr-4">TRANG CHỦ </a>
                 <span class="opacity-60 text-white capitalize">/</span>
                 <span class="opacity-70 text-orange-400 capitalize pl-4"> GIỚI THIỆU</span>
             </div>
-        </div>
+        </div> -->
     </section>
     <section class="py-20 px-10 relative">
         <div class="flex flex-col md:flex-row gap-8 relative z-10">
@@ -456,8 +456,9 @@
 <script setup>
 // import { ref } from 'vue'
 import { ref, onMounted } from 'vue'
+import bgImage from '../assets/Image/banner.png';
 
-const banner = 'https://sacdep24.monamedia.net/wp-content/uploads/2024/10/Breadcrumb-bg.jpg';
+// const banner = 'https://sacdep24.monamedia.net/wp-content/uploads/2024/10/Breadcrumb-bg.jpg';
 const nen1 = 'https://sacdep24.monamedia.net/wp-content/uploads/2023/02/leef-root-img-2-1.png';
 
 

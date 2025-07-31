@@ -27,11 +27,13 @@ const isHovered = ref(false);
             Trang chủ
           </li>
           </router-link>
+          <router-link to="/introduce">
           <li
             class="flex flex-row pt-[8px] pr-[18px] pb-[8px] pl-[18px] mt-4 mb-4 ml-2 mr-2 rounded-md font-medium hover-btn-primary"
           >
             Giới thiệu
           </li>
+          </router-link>
           <li
             class="flex flex-row pt-[8px] pr-[18px] pb-[8px] pl-[18px] mt-4 mb-4 ml-2 mr-2 rounded-md font-medium hover-btn-primary items-center after:absolute after:left-0 after:bottom-[-24px] after:w-full after:h-8 after:bg-transparent "
           >
