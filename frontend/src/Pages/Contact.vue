@@ -33,7 +33,14 @@
           <div class="flex flex-col items-start gap-6 text-left">
             <div class="flex items-center gap-3">
               <span class="text-[#b5855b]">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
               </span>
               <span class="text-[#b5855b] text-lg"
                 >1073/23 Cách Mạng Tháng 8, P.7,<br />Q.Tân Bình, TP.HCM</span
