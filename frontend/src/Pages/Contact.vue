@@ -139,10 +139,33 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { reactive, ref } from 'vue'
+import bgImage from '../assets/Image/banner.png';
+// import emailjs from 'emailjs-com' // Nếu dùng EmailJS
 
+const userID = 'YOUR_EMAILJS_USER_ID'
+const serviceID = 'YOUR_SERVICE_ID'
+const templateID = 'YOUR_TEMPLATE_ID'
 
+const form = reactive({ name: '', email: '', phone: '', message: '' })
+const loading = ref(false)
+const submitted = ref(false)
+
+async function onSubmit() {
+  loading.value = true
+  try {
+    // await emailjs.send(serviceID, templateID, form, userID)
+    submitted.value = true
+    Object.assign(form, { name: '', email: '', phone: '', message: '' })
+  } catch (err) {
+    console.error(err)
+    alert('Gửi thất bại, vui lòng thử lại.')
+  } finally {
+    loading.value = false
+  }
+}
 </script>
-<template>
-    <h1>Contact us pages</h1>
-</template>
+
+<style>
+/* Tailwind CSS áp dụng tự động */
+</style>
