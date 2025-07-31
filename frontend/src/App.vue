@@ -1,5 +1,4 @@
 <script setup>
-
 import Header from "./layouts/Header.vue";
 import Navbar from "./layouts/Navbar.vue";
 import Footer from "./layouts/Footer.vue";
@@ -14,4 +13,6 @@ import Footer from "./layouts/Footer.vue";
 
 </template>
 
+
 <style scoped></style>
+
