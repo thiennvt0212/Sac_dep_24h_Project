@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "vite-plugin-inspect": "^11.3.2",
-    "vue-router": "^4.5.1"
-  }
-}
