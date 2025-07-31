@@ -1,25 +1,41 @@
 <script setup>
-import { ref } from 'vue'
-import imageCard1 from '../assets/Image/CA-bnr-1.webp'
-import imageCard2 from '../assets/Image/CA-bnr-2.webp'
-import bgImage from '../assets/Image/banner.png';
+import { ref } from "vue";
+import imageCard1 from "../assets/Image/CA-bnr-1.webp";
+import imageCard2 from "../assets/Image/CA-bnr-2.webp";
+import bgImage from "../assets/Image/banner.png";
+import bannerImage from "@/assets/Image/banner-san-pham.png";
 
-const showLoginPassword = ref(false)
-const showRegisterPassword = ref(false)
+const showLoginPassword = ref(false);
+const showRegisterPassword = ref(false);
 </script>
 
 <template>
-  <img :src="bgImage" alt="banner"/>
+  <div
+    class="relative bg-cover bg-center h-[500px]"
+    :style="{ backgroundImage: `url(${bannerImage})` }"
+  >
+    <!-- Tiêu đề banner -->
+    <div
+      class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center"
+    >
+      <h1 class="text-white text-5xl font-bold mb-2">Sản Phẩm</h1>
+      <p class="text-white text-sm mt-2">
+        <a href="/" class="hover:underline text-white">TRANG CHỦ</a> /
+        <span class="text-gray-300">SẢN PHẨM</span>
+      </p>
+    </div>
+  </div>
   <div class="min-h-screen bg-[#fdf3f2] pt-[100px] pb-[20px]">
-    
-    <div class=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-[80px] pr-[30px] pl-[30px]">
+    <div
+      class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-[80px] pr-[30px] pl-[30px]"
+    >
       <div>
         <h2 class="text-2xl font-semibold mb-6">Đăng nhập</h2>
         <form class="">
           <input
             type="text"
             placeholder="Tên đăng nhập hoặc Email"
-            class="w-full border  pt-[10px] pb-[10px] pl-[20px] pr-[20px] outline-none bg-transparent action-input leading-[38px] text-[16px] font-light"
+            class="w-full border pt-[10px] pb-[10px] pl-[20px] pr-[20px] outline-none bg-transparent action-input leading-[38px] text-[16px] font-light"
           />
           <div class="relative mt-[30px]">
             <input
@@ -35,8 +51,11 @@ const showRegisterPassword = ref(false)
             </span>
           </div>
 
-          <div class="flex items-center justify-between  mt-[30px]">
-            <button type="submit" class="bg-[#b8743d] text-white px-6 py-2 font-semibold">
+          <div class="flex items-center justify-between mt-[30px]">
+            <button
+              type="submit"
+              class="bg-[#b8743d] text-white px-6 py-2 font-semibold"
+            >
               ĐĂNG NHẬP
             </button>
             <div class="flex items-center gap-2">
@@ -50,7 +69,7 @@ const showRegisterPassword = ref(false)
         </form>
       </div>
 
-      <div >
+      <div>
         <h2 class="text-2xl font-semibold mb-6">Đăng ký</h2>
         <form class="">
           <input
@@ -77,17 +96,21 @@ const showRegisterPassword = ref(false)
             </span>
           </div>
           <p class="text-sm mt-[30px]">
-            Dữ liệu cá nhân của bạn sẽ được sử dụng để hỗ trợ trải nghiệm của bạn trên toàn bộ trang web này,
-            để quản lý quyền truy cập vào tài khoản của bạn và cho các mục đích khác được mô tả trong
+            Dữ liệu cá nhân của bạn sẽ được sử dụng để hỗ trợ trải nghiệm của
+            bạn trên toàn bộ trang web này, để quản lý quyền truy cập vào tài
+            khoản của bạn và cho các mục đích khác được mô tả trong
             <a href="#" class="underline">chính sách riêng tư</a> của chúng tôi.
           </p>
-          <button type="submit" class="bg-[#b8743d] text-white px-6 py-2 font-semibold mt-[30px]">
+          <button
+            type="submit"
+            class="bg-[#b8743d] text-white px-6 py-2 font-semibold mt-[30px]"
+          >
             ĐĂNG KÝ
           </button>
         </form>
       </div>
     </div>
-     <div class="pt-[80px] pb-[80px] mx-auto grid md:grid-cols-2 gap-6">
+    <div class="pt-[80px] pb-[80px] mx-auto grid md:grid-cols-2 gap-6">
       <!-- Card 1 -->
       <div
         class="relative rounded-r-[30px] overflow-hidden text-white h-[400px] flex items-center justify-center text-center p-6"
@@ -132,9 +155,7 @@ const showRegisterPassword = ref(false)
             TIE UP WITH US
           </button>
         </div>
+      </div>
     </div>
   </div>
-  </div>
- 
-   
 </template>
