@@ -18,10 +18,21 @@ const showRegisterPassword = ref(false);
     <div
       class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center"
     >
-      <h1 class="text-6xl font-light text-white mb-30 tracking-wide capitalize pb-8 ">My account</h1>
+      <h1
+        class="text-6xl font-light text-white mb-30 tracking-wide capitalize pb-8"
+      >
+        My account
+      </h1>
       <p class="text-white text-sm mt-2">
-        <a href="/" class="hover:underline opacity-80 text-white capitalize pr-4">TRANG CHỦ</a> /
-          <span class="opacity-70 text-orange-400 capitalize pl-4">My ACCOUNT</span>
+        <a
+          href="/"
+          class="hover:underline opacity-80 text-white capitalize pr-4"
+          >TRANG CHỦ</a
+        >
+        /
+        <span class="opacity-70 text-orange-400 capitalize pl-4"
+          >My ACCOUNT</span
+        >
       </p>
     </div>
   </div>
@@ -47,7 +58,6 @@ const showRegisterPassword = ref(false);
               class="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
               @click="showLoginPassword = !showLoginPassword"
             >
-              👁️
             </span>
           </div>
 
@@ -92,7 +102,6 @@ const showRegisterPassword = ref(false);
               class="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
               @click="showRegisterPassword = !showRegisterPassword"
             >
-              👁️
             </span>
           </div>
           <p class="text-sm mt-[30px]">
