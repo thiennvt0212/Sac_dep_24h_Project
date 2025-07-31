@@ -1,18 +1,16 @@
-
 <script setup>
-import Header from "./layouts/Header.vue";
+import Header from "./layouts/Header.vue"
+import Navbar from "./layouts/Navbar.vue"
+import Footer from "./layouts/Footer.vue"
 </script>
 
 <template>
-  <Header>
-
-  </Header>
-
-  <main>
-    <div >
-      Chào mừng đến với sắc đẹp 24h
-    </div>
-  </main>
+  <div class="flex flex-col min-h-screen">
+    <Header />
+    <Navbar />
+    <main class="flex-grow">
+      <router-view />
+    </main>
+    <Footer /> <!-- Phải có dòng này -->
+  </div>
 </template>
-
-<style scoped></style>

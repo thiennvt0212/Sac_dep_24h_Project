@@ -9,7 +9,7 @@
       </div>
       <div class="flex items-center ml-4 mr-4">
         <font-awesome-icon :icon="['fas', 'circle-dollar-to-slot']" />
-        <P class="pl-2">info@themona.global</P>
+        <p class="pl-2">info@themona.global</p>
       </div>
     </div>
     <div class="basis-1/3 flex justify-end" >
@@ -19,7 +19,7 @@
       </div>
       <div class="flex items-center ml-4 mr-4">
         <font-awesome-icon :icon="['fas', 'circle-dollar-to-slot']" />
-        <P class="pl-1 pr-1">Yêu thích</P>
+        <p class="pl-1 pr-1">Yêu thích</p>
       </div>
     </div>
   </div>
