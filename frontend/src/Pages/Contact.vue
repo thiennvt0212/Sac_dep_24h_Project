@@ -1,4 +1,6 @@
+
 <template>
+<img :src="bgImage" alt="banner"/>
   <section class="bg-pink-50 py-12">
     <div class="max-w-5xl mx-auto px-4">
       <div class="flex flex-col items-center mb-2">
@@ -138,6 +140,7 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
+import bgImage from '../assets/Image/banner.png';
 // import emailjs from 'emailjs-com' // Nếu dùng EmailJS
 
 const userID = 'YOUR_EMAILJS_USER_ID'

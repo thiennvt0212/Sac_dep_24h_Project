@@ -48,11 +48,13 @@ const isHovered = ref(false);
           >
             Tin tức
           </li>
+          <router-link to="/contact">
           <li
             class="flex flex-row pt-[8px] pr-[18px] pb-[8px] pl-[18px] mt-4 mb-4 ml-2 mr-2 rounded-md font-medium hover-btn-primary"
           >
             Liên hệ
           </li>
+          </router-link>
         </ul>
       </div>
       <div class="basis-1/5 flex justify-end h-16">
