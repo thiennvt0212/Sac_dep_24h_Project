@@ -2,8 +2,8 @@
   <div
     class="text-black flex flex-col max-w-screen-2xl items-center ml-auto w-full bg-[#fdf3f2] py-16"
   >
-    <div class="flex justify-around w-full">
-      <div>
+    <div class="flex justify-around w-full px-10 md:px-0">
+      <div class="mr-0 md:mr-32">
         <span class="uppercase">Sản phẩm nổi bật</span>
         <h1 class="capitalize font-medium text-4xl py-3">
           Sản Phẩm Tinh Chất CBD
@@ -14,7 +14,7 @@
         </p>
       </div>
       <button
-        class="uppercase text-sm hover:text-[#B67E53] transition duration-500 relative"
+        class="uppercase text-sm hover:text-[#B67E53] transition duration-500 relative w-[90px]"
       >
         xem tất cả
         <span
@@ -22,14 +22,15 @@
         ></span>
       </button>
     </div>
-    <div class="grid gap-9 w-[80%] grid-cols-2 md:grid-cols-4">
+    <div class="grid gap-9 w-[80%] grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
       <div class="flex flex-col items-center group">
-        <div class="relative aspect-[342/333] w-full max-w-[342px]">
+        <div class="relative aspect-[342/333] w-full max-w-[342px] group">
           <img
             src="../assets/Image/shop-23-1.webp "
             alt="skin"
             class="object-cover rounded-md w-full h-full"
           />
+
           <div
             class="absolute top-0 left-0 right-0 bottom-0 flex opacity-0 group-hover:opacity-100 justify-center items-center transition duration-500 uppercase"
           >

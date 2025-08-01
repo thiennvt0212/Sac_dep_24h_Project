@@ -14,11 +14,11 @@
         tươi mới. Phù hợp với mọi loại da.
       </p>
     </div>
-    <div class="flex items-center my-8">
-      <div class="text-right">
-        <div class="relative w-[384px] mb-5">
+    <div class="flex flex-col lg:flex-row items-center my-8 px-20 md:px-0">
+      <div class="lg:text-right">
+        <div class="relative lg:max-w-[384px] mb-5">
           <div
-            class="absolute bottom-7 right-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
+            class="absolute bottom-7 left-[-30px] lg:right-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
           >
             01
           </div>
@@ -30,9 +30,9 @@
             </p>
           </div>
         </div>
-        <div class="relative w-[384px] mb-5">
+        <div class="relative lg:max-w-[384px] mb-5">
           <div
-            class="absolute bottom-7 right-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
+            class="absolute bottom-7 left-[-30px] lg:right-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
           >
             02
           </div>
@@ -44,9 +44,9 @@
             </p>
           </div>
         </div>
-        <div class="relative w-[384px] mb-5">
+        <div class="relative lg:max-w-[384px] mb-5">
           <div
-            class="absolute bottom-7 right-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
+            class="absolute bottom-7 left-[-30px] lg:right-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
           >
             03
           </div>
@@ -58,9 +58,9 @@
             </p>
           </div>
         </div>
-        <div class="relative w-[384px] mb-5">
+        <div class="relative lg:max-w-[384px] mb-5">
           <div
-            class="absolute bottom-7 right-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
+            class="absolute bottom-7 left-[-30px] lg:right-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
           >
             04
           </div>
@@ -81,7 +81,7 @@
         />
       </div>
       <div class="text-left">
-        <div class="relative w-[384px] mb-5">
+        <div class="relative lg:max-w-[384px] mb-5">
           <div
             class="absolute bottom-7 left-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
           >
@@ -95,7 +95,7 @@
             </p>
           </div>
         </div>
-        <div class="relative w-[384px] mb-5">
+        <div class="relative lg:max-w-[384px] mb-5">
           <div
             class="absolute bottom-7 left-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
           >
@@ -109,7 +109,7 @@
             </p>
           </div>
         </div>
-        <div class="relative w-[384px] mb-5">
+        <div class="relative lg:max-w-[384px] mb-5">
           <div
             class="absolute bottom-7 left-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
           >
@@ -123,7 +123,7 @@
             </p>
           </div>
         </div>
-        <div class="relative w-[384px] mb-5">
+        <div class="relative lg:max-w-[384px] mb-5">
           <div
             class="absolute bottom-7 left-[-30px] text-[90px] text-[#B67E53] z-0 opacity-15"
           >
