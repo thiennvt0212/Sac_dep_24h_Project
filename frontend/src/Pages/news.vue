@@ -1,173 +1,23 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import BlogList from "@/Components/Blog/BlogList.vue";
 import BlogSidebar from "@/Components/Blog/BlogSidebar.vue";
 import bgImage from "../assets/Image/banner.png";
 import bannerImage from "@/assets/Image/banner-san-pham.png";
-const allPost = ref([
-  {
-    id: 1,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 2,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 3,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 4,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 5,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 6,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 7,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg2.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 8,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg2.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 9,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg2.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 10,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg2.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 11,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg2.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 12,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg2.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 13,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 14,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 15,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 16,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 17,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-  {
-    id: 18,
-    type: "cbd pastries",
-    title: "Making CBD-Infused Pastries And Cupcakes",
-    description:
-      "Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Pretium lectus quam id...",
-    image: new URL("../assets/Image/blogImg1.png", import.meta.url).href,
-    date: "10/03/2003",
-  },
-]);
+import api from "@/api/client";
+const allPost = ref([]);
+onMounted(async () => {
+  try {
+    const res = await api.get('/blogs');
+    console.log(res);
+    allPost.value = res.data;
+  } catch (error) {
+    console.error('Lỗi khi lấy blogs:', error);
+    alert('Không thể tải blogs');
+  } finally {
+    loading.value = false;
+  }
+});
 </script>
 <template>
   <div

@@ -1,3 +1,15 @@
+<script setup>
+import { faKey } from '@fortawesome/free-solid-svg-icons';
+
+const props = defineProps({
+    products: {
+        type: Array,
+        required: true
+    }
+})
+
+</script>
+
 <template>
   <div
     class="text-black flex flex-col max-w-screen-2xl items-center ml-auto w-full bg-[#fdf3f2] py-16"
@@ -23,10 +35,11 @@
       </button>
     </div>
     <div class="grid gap-9 w-[80%] grid-cols-2 md:grid-cols-4">
+      <div v-for="product in props.products.slice(0,8)" :key="product.id">
       <div class="flex flex-col items-center group">
         <div class="relative aspect-[342/333] w-full max-w-[342px]">
           <img
-            src="../assets/Image/shop-23-1.webp "
+            :src="product.image"
             alt="skin"
             class="object-cover rounded-md w-full h-full"
           />
@@ -47,9 +60,9 @@
         </div>
 
         <h2 class="uppercase text-sm pt-4 font-medium">
-          Skin Nourishing Serum
+          {{ product.name }}
         </h2>
-        <p class="capitalize text-xs py-1">Beauty Products</p>
+        <p class="capitalize text-xs py-1">{{ product.description }}</p>
         <div class="flex">
           <span class="text-[#8d8d8d] relative font-medium"
             >500,000 đ
@@ -57,267 +70,9 @@
               class="absolute h-[2px] w-full rotate-[170deg] bottom-3 bg-[#cf2e2e]"
             ></div>
           </span>
-          <span class="text-[#cf2e2e] ml-3 font-medium">419,000 ₫</span>
+          <span class="text-[#cf2e2e] ml-3 font-medium">{{ product.price.toLocaleString() }}đ</span>
         </div>
       </div>
-      <div class="flex flex-col items-center group">
-        <div class="relative aspect-[342/333] w-full max-w-[342px]">
-          <img
-            src="../assets/Image/shop-23-1.webp "
-            alt="skin"
-            class="object-cover rounded-md w-full h-full"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 flex opacity-0 group-hover:opacity-100 justify-center items-center transition duration-500 uppercase"
-          >
-            <div
-              class="cursor-pointer bg-[#B67E53] px-3 py-2 text-xs text-white rounded-sm uppercase font-medium"
-            >
-              Thêm vào giỏ hàng
-            </div>
-          </div>
-          <div
-            class="absolute top-2 right-2 bg-[#B67E53] px-2 py-1 text-[8px] text-white rounded-sm uppercase font-medium"
-          >
-            Sale
-          </div>
-        </div>
-
-        <h2 class="uppercase text-sm pt-4 font-medium">
-          Skin Nourishing Serum
-        </h2>
-        <p class="capitalize text-xs py-1">Beauty Products</p>
-        <div class="flex">
-          <span class="text-[#8d8d8d] relative font-medium"
-            >500,000 đ
-            <div
-              class="absolute h-[2px] w-full rotate-[170deg] bottom-3 bg-[#cf2e2e]"
-            ></div>
-          </span>
-          <span class="text-[#cf2e2e] ml-3 font-medium">419,000 ₫</span>
-        </div>
-      </div>
-      <div class="flex flex-col items-center group">
-        <div class="relative aspect-[342/333] w-full max-w-[342px]">
-          <img
-            src="../assets/Image/shop-23-1.webp "
-            alt="skin"
-            class="object-cover rounded-md w-full h-full"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 flex opacity-0 group-hover:opacity-100 justify-center items-center transition duration-500 uppercase"
-          >
-            <div
-              class="cursor-pointer bg-[#B67E53] px-3 py-2 text-xs text-white rounded-sm uppercase font-medium"
-            >
-              Thêm vào giỏ hàng
-            </div>
-          </div>
-          <div
-            class="absolute top-2 right-2 bg-[#B67E53] px-2 py-1 text-[8px] text-white rounded-sm uppercase font-medium"
-          >
-            Sale
-          </div>
-        </div>
-
-        <h2 class="uppercase text-sm pt-4 font-medium">
-          Skin Nourishing Serum
-        </h2>
-        <p class="capitalize text-xs py-1">Beauty Products</p>
-        <div class="flex">
-          <span class="text-[#8d8d8d] relative font-medium"
-            >500,000 đ
-            <div
-              class="absolute h-[2px] w-full rotate-[170deg] bottom-3 bg-[#cf2e2e]"
-            ></div>
-          </span>
-          <span class="text-[#cf2e2e] ml-3 font-medium">419,000 ₫</span>
-        </div>
-      </div>
-      <div class="flex flex-col items-center group">
-        <div class="relative aspect-[342/333] w-full max-w-[342px]">
-          <img
-            src="../assets/Image/shop-23-1.webp "
-            alt="skin"
-            class="object-cover rounded-md w-full h-full"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 flex opacity-0 group-hover:opacity-100 justify-center items-center transition duration-500 uppercase"
-          >
-            <div
-              class="cursor-pointer bg-[#B67E53] px-3 py-2 text-xs text-white rounded-sm uppercase font-medium"
-            >
-              Thêm vào giỏ hàng
-            </div>
-          </div>
-          <div
-            class="absolute top-2 right-2 bg-[#B67E53] px-2 py-1 text-[8px] text-white rounded-sm uppercase font-medium"
-          >
-            Sale
-          </div>
-        </div>
-
-        <h2 class="uppercase text-sm pt-4 font-medium">
-          Skin Nourishing Serum
-        </h2>
-        <p class="capitalize text-xs py-1">Beauty Products</p>
-        <div class="flex">
-          <span class="text-[#8d8d8d] relative font-medium"
-            >500,000 đ
-            <div
-              class="absolute h-[2px] w-full rotate-[170deg] bottom-3 bg-[#cf2e2e]"
-            ></div>
-          </span>
-          <span class="text-[#cf2e2e] ml-3 font-medium">419,000 ₫</span>
-        </div>
-      </div>
-      <div class="flex flex-col items-center group">
-        <div class="relative aspect-[342/333] w-full max-w-[342px]">
-          <img
-            src="../assets/Image/shop-23-1.webp "
-            alt="skin"
-            class="object-cover rounded-md w-full h-full"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 flex opacity-0 group-hover:opacity-100 justify-center items-center transition duration-500 uppercase"
-          >
-            <div
-              class="cursor-pointer bg-[#B67E53] px-3 py-2 text-xs text-white rounded-sm uppercase font-medium"
-            >
-              Thêm vào giỏ hàng
-            </div>
-          </div>
-          <div
-            class="absolute top-2 right-2 bg-[#B67E53] px-2 py-1 text-[8px] text-white rounded-sm uppercase font-medium"
-          >
-            Sale
-          </div>
-        </div>
-
-        <h2 class="uppercase text-sm pt-4 font-medium">
-          Skin Nourishing Serum
-        </h2>
-        <p class="capitalize text-xs py-1">Beauty Products</p>
-        <div class="flex">
-          <span class="text-[#8d8d8d] relative font-medium"
-            >500,000 đ
-            <div
-              class="absolute h-[2px] w-full rotate-[170deg] bottom-3 bg-[#cf2e2e]"
-            ></div>
-          </span>
-          <span class="text-[#cf2e2e] ml-3 font-medium">419,000 ₫</span>
-        </div>
-      </div>
-      <div class="flex flex-col items-center group">
-        <div class="relative aspect-[342/333] w-full max-w-[342px]">
-          <img
-            src="../assets/Image/shop-23-1.webp "
-            alt="skin"
-            class="object-cover rounded-md w-full h-full"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 flex opacity-0 group-hover:opacity-100 justify-center items-center transition duration-500 uppercase"
-          >
-            <div
-              class="cursor-pointer bg-[#B67E53] px-3 py-2 text-xs text-white rounded-sm uppercase font-medium"
-            >
-              Thêm vào giỏ hàng
-            </div>
-          </div>
-          <div
-            class="absolute top-2 right-2 bg-[#B67E53] px-2 py-1 text-[8px] text-white rounded-sm uppercase font-medium"
-          >
-            Sale
-          </div>
-        </div>
-
-        <h2 class="uppercase text-sm pt-4 font-medium">
-          Skin Nourishing Serum
-        </h2>
-        <p class="capitalize text-xs py-1">Beauty Products</p>
-        <div class="flex">
-          <span class="text-[#8d8d8d] relative font-medium"
-            >500,000 đ
-            <div
-              class="absolute h-[2px] w-full rotate-[170deg] bottom-3 bg-[#cf2e2e]"
-            ></div>
-          </span>
-          <span class="text-[#cf2e2e] ml-3 font-medium">419,000 ₫</span>
-        </div>
-      </div>
-      <div class="flex flex-col items-center group">
-        <div class="relative aspect-[342/333] w-full max-w-[342px]">
-          <img
-            src="../assets/Image/shop-23-1.webp "
-            alt="skin"
-            class="object-cover rounded-md w-full h-full"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 flex opacity-0 group-hover:opacity-100 justify-center items-center transition duration-500 uppercase"
-          >
-            <div
-              class="cursor-pointer bg-[#B67E53] px-3 py-2 text-xs text-white rounded-sm uppercase font-medium"
-            >
-              Thêm vào giỏ hàng
-            </div>
-          </div>
-          <div
-            class="absolute top-2 right-2 bg-[#B67E53] px-2 py-1 text-[8px] text-white rounded-sm uppercase font-medium"
-          >
-            Sale
-          </div>
-        </div>
-
-        <h2 class="uppercase text-sm pt-4 font-medium">
-          Skin Nourishing Serum
-        </h2>
-        <p class="capitalize text-xs py-1">Beauty Products</p>
-        <div class="flex">
-          <span class="text-[#8d8d8d] relative font-medium"
-            >500,000 đ
-            <div
-              class="absolute h-[2px] w-full rotate-[170deg] bottom-3 bg-[#cf2e2e]"
-            ></div>
-          </span>
-          <span class="text-[#cf2e2e] ml-3 font-medium">419,000 ₫</span>
-        </div>
-      </div>
-      <div class="flex flex-col items-center group">
-        <div class="relative aspect-[342/333] w-full max-w-[342px]">
-          <img
-            src="../assets/Image/shop-23-1.webp "
-            alt="skin"
-            class="object-cover rounded-md w-full h-full"
-          />
-          <div
-            class="absolute top-0 left-0 right-0 bottom-0 flex opacity-0 group-hover:opacity-100 justify-center items-center transition duration-500 uppercase"
-          >
-            <div
-              class="cursor-pointer bg-[#B67E53] px-3 py-2 text-xs text-white rounded-sm uppercase font-medium"
-            >
-              Thêm vào giỏ hàng
-            </div>
-          </div>
-          <div
-            class="absolute top-2 right-2 bg-[#B67E53] px-2 py-1 text-[8px] text-white rounded-sm uppercase font-medium"
-          >
-            Sale
-          </div>
-        </div>
-
-        <h2 class="uppercase text-sm pt-4 font-medium">
-          Skin Nourishing Serum
-        </h2>
-        <p class="capitalize text-xs py-1">Beauty Products</p>
-        <div class="flex">
-          <span class="text-[#8d8d8d] relative font-medium"
-            >500,000 đ
-            <div
-              class="absolute h-[2px] w-full rotate-[170deg] bottom-3 bg-[#cf2e2e]"
-            ></div>
-          </span>
-          <span class="text-[#cf2e2e] ml-3 font-medium">419,000 ₫</span>
-        </div>
       </div>
     </div>
   </div>

@@ -456,6 +456,104 @@ export default {
 };
 </script>
 
+
+<!-- <script setup>
+import { ref, computed } from 'vue'
+
+
+// Import images
+import cate1 from '@/assets/Image/cate1.png'
+import cate2 from '@/assets/Image/cate2.png'
+import cate3 from '@/assets/Image/cate3.png'
+import cate4 from '@/assets/Image/cate4.png'
+import cate5 from '@/assets/Image/cate5.png'
+import cate6 from '@/assets/Image/cate6.png'
+
+import img1 from '@/assets/Image/p1.jpg'
+import img2 from '@/assets/Image/p2.jpg'
+import img3 from '@/assets/Image/p3.jpg'
+import img4 from '@/assets/Image/p4.jpg'
+
+import bannerImage from '@/assets/Image/banner-san-pham.png'
+
+// State
+const viewMode = ref('grid4')
+const selectedSort = ref('default')
+const showMegaMenu = ref(false)
+const currentPage = ref(1)
+
+// Categories
+const categories = [
+  { name: 'Sữa Rửa Mặt', image: cate1 },
+  { name: 'Kem Dưỡng', image: cate2 },
+  { name: 'Chống Nắng', image: cate3 },
+  { name: 'Phấn Nền', image: cate4 },
+  { name: 'Tinh Chất / Serum', image: cate5 },
+  { name: 'Tẩy Tế Bào Da', image: cate6 },
+  { name: 'Toner / Nước Hoa Hồng', image: cate6 },
+  { name: 'Mặt Nạ Dưỡng Da', image: cate6 },
+  { name: 'Son Môi', image: cate6 },
+  { name: 'Trang Điểm Mắt', image: cate6 },
+  { name: 'Trang Điểm ', image: cate6 },
+  { name: 'Trang Điểm Mắt', image: cate6 },
+]
+
+// Products
+const products = [
+  { name: 'ACNE TREATING SERUM', category: 'Beauty Products', price: '659,000', oldPrice: '', image: img1 },
+  { name: 'ANTI PIGMENTATION COMBO', category: 'Beauty Products', price: '359,000', oldPrice: '580,000', image: img2 },
+  { name: 'ANTI-AGE SERUM', category: 'Beauty Products', price: '320,000', oldPrice: '580,000', image: img3 },
+  { name: 'ANTI-BLEMISH FACIAL SERUM', category: 'Beauty Products', price: '435,000', oldPrice: '', image: img4 },
+  { name: 'CBD GLOW SERUM', category: 'Beauty Products', price: '489,000', oldPrice: '', image: img1 },
+  { name: 'HERBAL MOISTURIZER', category: 'Beauty Products', price: '379,000', oldPrice: '420,000', image: img1 },
+  { name: 'NATURAL OIL SET', category: 'Beauty Products', price: '599,000', oldPrice: '', image: img1 },
+  { name: 'DAILY FACE WASH', category: 'Beauty Products', price: '315,000', oldPrice: '', image: img1 },
+  { name: 'CBD EYE SERUM', category: 'Beauty Products', price: '419,000', oldPrice: '490,000', image: img2 },
+  { name: 'BRIGHTENING OIL COMBO', category: 'Beauty Products', price: '579,000', oldPrice: '', image: img3 },
+  { name: 'GENTLE CLEANSER', category: 'Beauty Products', price: '329,000', oldPrice: '', image: img4 },
+  { name: 'GENTLE CLEANSER', category: 'Beauty Products', price: '329,000', oldPrice: '', image: img4 },
+  { name: 'GENTLE CLEANSER', category: 'Beauty Products', price: '329,000', oldPrice: '', image: img4 },
+  { name: 'GENTLE CLEANSER', category: 'Beauty Products', price: '329,000', oldPrice: '', image: img4 },
+  { name: 'GENTLE CLEANSER', category: 'Beauty Products', price: '329,000', oldPrice: '', image: img4 },
+  { name: 'GENTLE CLEANSER', category: 'Beauty Products', price: '329,000', oldPrice: '', image: img4 },
+  { name: 'GENTLE CLEANSER', category: 'Beauty Products', price: '329,000', oldPrice: '', image: img4 },
+  { name: 'GENTLE CLEANSER', category: 'Beauty Products', price: '329,000', oldPrice: '', image: img4 },
+]
+
+// Computed
+const paginatedProducts = computed(() => {
+  const start = (currentPage.value - 1) * productsPerPage
+  const end = start + productsPerPage
+  return products.slice(start, end)
+})
+
+const totalPages = computed(() => {
+  return Math.ceil(products.length / productsPerPage)
+})
+
+const startResult = computed(() => {
+  return (currentPage.value - 1) * productsPerPage + 1
+})
+
+const endResult = computed(() => {
+  return Math.min(currentPage.value * productsPerPage, products.length)
+})
+
+// Methods
+const scrollLeft = () => {
+  const el = document.querySelector('.category-scroll') // hoặc dùng ref
+  if (el) {
+    el.scrollBy({ left: -1360, behavior: 'smooth' })
+  }
+}
+
+const scrollRight = () => {
+  const el = document.querySelector('.category-scroll')
+  if (el) {
+    el.scrollBy({ left: 1360, behavior: 'smooth' })
+  }
+}
+</script> -->
 <style scoped>
 .scrollbar-hide {
   overflow: hidden;
