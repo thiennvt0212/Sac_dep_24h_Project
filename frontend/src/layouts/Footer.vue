@@ -8,9 +8,9 @@ import logo from "../assets/Image/logo-1-black.png";
     <div class="flex flex-row pb-[50px]">
       <div class="flex-[2] flex">
         <div class="pr-[36px]">
-          <a>
+          <router-link to="/">
             <img :src="logo" alt="logo" class="w-[200px] h-auto mb-[20px]" />
-          </a>
+        </router-link>
           <p>
             Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Hac
             habitasse platea dictumst quisque.
@@ -27,19 +27,19 @@ import logo from "../assets/Image/logo-1-black.png";
           <div>
             <ul>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Trang chủ</a>
+                <router-link to="/">Trang chủ</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Danh mục</a>
+                <router-link to="/products">Danh mục</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Giới thiệu</a>
+                <router-link to="/introduce">Giới thiệu</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Tin tức</a>
+                <router-link to="/news">Tin tức</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Liên hệ</a>
+                <router-link to="/contact">Liên hệ</router-link>
               </li>
             </ul>
           </div>
@@ -53,19 +53,19 @@ import logo from "../assets/Image/logo-1-black.png";
           <div>
             <ul>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Điều khoản dịch vụ</a>
+                <router-link to="/">Điều khoản dịch </router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Thông tin giao hàng</a>
+                <router-link to="/">Thông tin giao hàng</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Theo dõi đơn hàng</a>
+                <router-link to="/">Theo dõi đơn hàng</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Phương thức thanh toán</a>
+                <router-link to="/">Phương thức thanh toán</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Vận chuyển và giao hàng</a>
+                <router-link to="/">Vận chuyển và giao</router-link>
               </li>
             </ul>
           </div>
@@ -79,19 +79,19 @@ import logo from "../assets/Image/logo-1-black.png";
           <div>
             <ul>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Chính sách quyền riêng tư</a>
+                <router-link to="/">Chính sách quyền riêng tư</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Chính sách vận chuyển</a>
+                <router-link to="/">Chính sách vận chuyển</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Chính sách giao hàng</a>
+                <router-link to="/">Chính sách giao hàng</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Chính sách thanh toán</a>
+                <router-link to="/">Chính sách thanh toán</router-link>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>Chính sách đổi trả</a>
+                <router-link to="/">Chính sách đổi trả</router-link>
               </li>
             </ul>
           </div>
@@ -105,24 +105,24 @@ import logo from "../assets/Image/logo-1-black.png";
           <div>
             <ul>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a>
+                <router-link to="/"></router-link>
                   <font-awesome-icon
-                    :icon="['fas', 'location-dot']"
+                    :="['fas', 'location-dot']"
                     class="pr-[5px]"
-                  />Địa chỉ: 1073/23 CMT8, p.7, Q.Tân Bình, TP.HCM
+                  /><a>Địa chỉ: 1073/23 CMT8, p.7, Q.Tân Bình, TP.HCM
                   </a>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a><font-awesome-icon
-                    :icon="['fas', 'phone-volume']"
+                <router-link to="/"></router-link><font-awesome-icon
+                    :="['fas', 'phone-volume']"
                     class="pr-[5px]"
-                  />(+84) 0313-728-397</a>
+                  /><a>(+84) 0313-728-397</a>
               </li>
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
-                <a><font-awesome-icon
-                    :icon="['fas', 'envelope']"
+                <router-link to="/"></router-link><font-awesome-icon
+                    :="['fas', 'envelope']"
                     class="pr-[5px]"
-                  />info@themona.global</a>
+                  /><a>info@themona.global</a>
               </li>
             </ul>
           </div>

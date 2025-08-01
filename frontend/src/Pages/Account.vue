@@ -7,6 +7,26 @@ import bannerImage from "@/assets/Image/banner-san-pham.png";
 
 const showLoginPassword = ref(false);
 const showRegisterPassword = ref(false);
+
+const username = ref("");
+const passwordLogin = ref("");
+
+const registerUsername = ref("");
+const registerEmail = ref("");
+const registerPassword = ref("");
+
+const handleLogin = () => {
+  console.log("Tên đăng nhập:", username.value);
+  console.log("Mật khẩu:", passwordLogin.value);
+};
+
+const handleRegister = () => {
+  console.log("Đăng ký:", {
+    username: registerUsername.value,
+    email: registerEmail.value,
+    password: registerPassword.value,
+  });
+};
 </script>
 
 <template>
@@ -18,10 +38,21 @@ const showRegisterPassword = ref(false);
     <div
       class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center"
     >
-      <h1 class="text-6xl font-light text-white mb-30 tracking-wide capitalize pb-8 ">My account</h1>
+      <h1
+        class="text-6xl font-light text-white mb-30 tracking-wide capitalize pb-8"
+      >
+        My account
+      </h1>
       <p class="text-white text-sm mt-2">
-        <a href="/" class="hover:underline opacity-80 text-white capitalize pr-4">TRANG CHỦ</a> /
-          <span class="opacity-70 text-orange-400 capitalize pl-4">My ACCOUNT</span>
+        <a
+          href="/"
+          class="hover:underline opacity-80 text-white capitalize pr-4"
+          >TRANG CHỦ</a
+        >
+        /
+        <span class="opacity-70 text-orange-400 capitalize pl-4"
+          >My ACCOUNT</span
+        >
       </p>
     </div>
   </div>
@@ -31,14 +62,16 @@ const showRegisterPassword = ref(false);
     >
       <div>
         <h2 class="text-2xl font-semibold mb-6">Đăng nhập</h2>
-        <form class="">
+        <form @submit.prevent="handleLogin">
           <input
+            v-model="username"
             type="text"
             placeholder="Tên đăng nhập hoặc Email"
             class="w-full border pt-[10px] pb-[10px] pl-[20px] pr-[20px] outline-none bg-transparent action-input leading-[38px] text-[16px] font-light"
           />
           <div class="relative mt-[30px]">
             <input
+              v-model="passwordLogin"
               :type="showLoginPassword ? 'text' : 'password'"
               placeholder="Mật khẩu"
               class="w-full border p-3 pr-10 outline-none bg-transparent action-input pt-[10px] pb-[10px] pl-[20px] pr-[20px] leading-[38px] text-[16px] font-light"
@@ -47,7 +80,6 @@ const showRegisterPassword = ref(false);
               class="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
               @click="showLoginPassword = !showLoginPassword"
             >
-              👁️
             </span>
           </div>
 
@@ -92,7 +124,6 @@ const showRegisterPassword = ref(false);
               class="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
               @click="showRegisterPassword = !showRegisterPassword"
             >
-              👁️
             </span>
           </div>
           <p class="text-sm mt-[30px]">

@@ -25,6 +25,14 @@
   transition: all 0.3s ease;
 }
 
+.hover-text-black-primary {
+  color: #000000;
+  transition: all 0.3s ease;
+}
+.hover-text-black-primary:hover {
+  color: #B67E53 ; 
+}
+
 .hover-text-primary {
   color: #ffffff;
   transition: all 0.3s ease;

@@ -23,6 +23,7 @@ import {
   faTruckRampBox,
   faArrowLeft,
   faArrowRight,
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -55,7 +56,8 @@ library.add(
   faCartShopping,
   faTruckRampBox,
   faArrowLeft,
-  faArrowRight
+  faArrowRight,
+  faEye
 );
 
 const app = createApp(App);
