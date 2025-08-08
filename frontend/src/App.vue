@@ -1,18 +1,18 @@
-
 <script setup>
 import Header from "./layouts/Header.vue";
+import Navbar from "./layouts/Navbar.vue";
+import Footer from "./layouts/Footer.vue";
 </script>
 
 <template>
-  <Header>
+  
+  <Header> </Header>
+  <Navbar></Navbar>
+    <router-view></router-view>
+  <Footer></Footer>
 
-  </Header>
-
-  <main>
-    <div >
-      Chào mừng đến với sắc đẹp 24h
-    </div>
-  </main>
 </template>
 
+
 <style scoped></style>
+
