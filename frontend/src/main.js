@@ -23,6 +23,8 @@ import {
   faArrowLeft,
   faArrowRight,
   faEye,
+  faPlus,
+  faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -30,7 +32,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import router from './Router'
+import router from "./Router";
 
 AOS.init();
 
@@ -41,7 +43,6 @@ library.add(
   faEnvelope,
   faUser,
   faHeart,
-  faCartShopping,
   faPhoneVolume,
   faLocationDot,
   faChevronRight,
@@ -56,13 +57,12 @@ library.add(
   faTruckRampBox,
   faArrowLeft,
   faArrowRight,
-  faEye
+  faEye,
+  faPlus,
+  faMinus
 );
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
-app.use(router)
+app.use(router);
 app.mount("#app");
-
-
-
