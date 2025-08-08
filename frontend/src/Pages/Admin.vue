@@ -192,14 +192,14 @@
                     <td class="px-4 py-3">
                       <img :src="item.image" alt="Ảnh" class="h-10 w-10 object-cover rounded-md border border-gray-200" />
                     </td>
-                    <td class="px-4 py-3 text-gray-700 font-mono">{{ item.barcode }}</td>
-                    <td class="px-4 py-3 text-amber-600 font-medium">{{ item.code }}</td>
-                    <td class="px-4 py-3 text-gray-700">{{ item.name }}</td>
-                    <td class="px-4 py-3 text-gray-700">{{ formatCurrency(item.cost) }}</td>
-                    <td class="px-4 py-3 text-gray-700 font-medium">{{ formatCurrency(item.price) }}</td>
-                    <td class="px-4 py-3 text-gray-700">{{ formatCurrency(item.wholesale) }}</td>
-                    <td class="px-4 py-3 text-gray-700">{{ item.stock }}</td>
-                    <td class="px-4 py-3 text-gray-700">{{ item.totalStock }}</td>
+                    <td class="px-4 py-3 text-gray-700 font-mono">{{ item.id }}</td>
+                    <td class="px-4 py-3 text-amber-600 font-medium">{{ item.name }}</td>
+                    <td class="px-4 py-3 text-gray-700">{{ item.description }}</td>
+                    <td class="px-4 py-3 text-gray-700">{{ formatCurrency(item.price) }}</td>
+                    <td class="px-4 py-3 text-gray-700 font-medium">{{ formatCurrency(item.image) }}</td>
+                    <td class="px-4 py-3 text-gray-700">{{ formatCurrency(item.sku) }}</td>
+                    <td class="px-4 py-3 text-gray-700">{{ item.category }}</td>
+                    <td class="px-4 py-3 text-gray-700">{{ item.quantity }}</td>
                     <td class="px-4 py-3">
                       <span class="px-2 py-1 text-xs rounded-full" 
                             :class="item.status > 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'">
@@ -238,11 +238,21 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted  } from "vue";
 import logo from "../assets/Image/logo-2-e1729751913411.png";
+import productApi from "@/api/product";
 
 const sidebarOpen = ref(true);
+const products = ref([]);
 const activeTab = ref('products');
+
+onMounted(async () => {
+  try {
+    products.value = await productApi.getAll();
+  } catch (err) {
+    console.error('Lỗi khi load user:', err);
+  }
+});
 
 const toggleSidebar = () => {
   sidebarOpen.value = !sidebarOpen.value;
@@ -263,45 +273,47 @@ const getTabTitle = (tab) => {
   return titles[tab] || 'Trang chủ';
 };
 
-const products = ref([
-  {
-    id: "6202785",
-    image: "https://via.placeholder.com/150?text=SP",
-    barcode: "2000045238480",
-    code: "VN003",
-    name: "Váy ngắn 003",
-    cost: 80000,
-    price: 190000,
-    wholesale: 130000,
-    stock: "20",
-    totalStock: "20",
-    status: 20,
-  },
-  {
-    id: "6202782",
-    image: "https://via.placeholder.com/150?text=SP",
-    barcode: "2000045238442",
-    code: "VD002",
-    name: "Váy dài 002",
-    cost: 120000,
-    price: 260000,
-    wholesale: 210000,
-    stock: "50",
-    totalStock: "50",
-    status: 50,
-  },
-  {
-    id: "6202781",
-    image: "https://via.placeholder.com/150?text=SP",
-    barcode: "2000045238435",
-    code: "VD001",
-    name: "Váy dài 001",
-    cost: 150000,
-    price: 280000,
-    wholesale: 250000,
-    stock: "50",
-    totalStock: "50",
-    status: 0,
-  },
-]);
+// const products = ref([
+//   {
+//     id: "6202785",
+//     image: "https://via.placeholder.com/150?text=SP",
+//     barcode: "2000045238480",
+//     code: "VN003",
+//     name: "Váy ngắn 003",
+//     cost: 80000,
+//     price: 190000,
+//     wholesale: 130000,
+//     stock: "20",
+//     totalStock: "20",
+//     status: 20,
+//   },
+//   {
+//     id: "6202782",
+//     image: "https://via.placeholder.com/150?text=SP",
+//     barcode: "2000045238442",
+//     code: "VD002",
+//     name: "Váy dài 002",
+//     cost: 120000,
+//     price: 260000,
+//     wholesale: 210000,
+//     stock: "50",
+//     totalStock: "50",
+//     status: 50,
+//   },
+//   {
+//     id: "6202781",
+//     image: "https://via.placeholder.com/150?text=SP",
+//     barcode: "2000045238435",
+//     code: "VD001",
+//     name: "Váy dài 001",
+//     cost: 150000,
+//     price: 280000,
+//     wholesale: 250000,
+//     stock: "50",
+//     totalStock: "50",
+//     status: 0,
+//   },
+// ]);
+
+
 </script>
