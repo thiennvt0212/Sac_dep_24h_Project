@@ -7,14 +7,13 @@ import ModalMenu from "../Components/ModalMenu.vue";
 
 const isProductHovered = ref(false);
 const isModalHovered = ref(false);
-const isModalVisible = computed(() => isProductHovered.value || isModalHovered.value);
+const isModalVisible = computed(
+  () => isProductHovered.value || isModalHovered.value
+);
 </script>
 
 <template>
-  <div
-    class="relative"
-
-  >
+  <div class="relative">
     <div
       class="flex flex-row border-t-2 pt-[20px] pr-[25px] pb-[20px] pl-[25px] top-[40px] left-0 right-0 bottom-10 z-20 absolute"
     >
@@ -41,8 +40,8 @@ const isModalVisible = computed(() => isProductHovered.value || isModalHovered.v
           </router-link>
           <router-link to="/products">
             <li
-             @mouseenter="isProductHovered = true"
-  @mouseleave="isProductHovered = false"
+              @mouseenter="isProductHovered = true"
+              @mouseleave="isProductHovered = false"
               class="flex flex-row pt-[8px] pr-[18px] pb-[8px] pl-[18px] mt-4 mb-4 ml-2 mr-2 rounded-md font-medium hover-btn-primary items-center after:absolute after:left-0 after:bottom-[-24px] after:w-full after:h-8 after:bg-transparent"
             >
               Sản phẩm
@@ -84,9 +83,11 @@ const isModalVisible = computed(() => isProductHovered.value || isModalHovered.v
           <span class="text-[var(--vt-c-white)]">0đ</span>
         </div>
       </div>
-      <div v-if="isModalVisible"
-  @mouseenter="isModalHovered = true"
-  @mouseleave="isModalHovered = false">
+      <div
+        v-if="isModalVisible"
+        @mouseenter="isModalHovered = true"
+        @mouseleave="isModalHovered = false"
+      >
         <ModalMenu />
       </div>
     </div>
