@@ -5,7 +5,9 @@ import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
 import { ProductsModule } from './modules/products/products.module';
 import { UserModule } from './modules/user/user.module';
-import { CartModule } from './modules/cart/cart.module';
+// import { CartModule } from './modules/cart/cart.module';
+import { CategoryModule } from './modules/category/category.module';
+
 
 @Module({
   imports: [
@@ -13,7 +15,8 @@ import { CartModule } from './modules/cart/cart.module';
     PrismaModule,
     ProductsModule,
     UserModule,
-    CartModule,
+    // CartModule,
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],
