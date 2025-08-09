@@ -16,7 +16,7 @@
     <div class="flex flex-col md:flex-row gap-8 relative z-10">
       <div class="w-full md:w-1/2">
         <span class="block text-base text-black uppercase mb-2 tracking-widest">VỀ CHÚNG TÔI</span>
-        <div class="block text-[30px] md:text-[50px] text-black mb-2 py-5 text-wrap font-light">
+        <div class="block text-[25px] md:text-[40px] text-black mb-2 py-5 text-wrap font-light">
           <span class="">Chúng Tôi Cung Cấp Sản <br />Phẩm Mỹ Phẩm Đa Chiều</span>
         </div>
         <img src="https://sacdep24.monamedia.net/wp-content/uploads/2024/10/CA-product-hook-5.jpg" alt=""
@@ -25,7 +25,7 @@
       <div class="w-full md:w-1/2 flex flex-col pl-10">
         <img src="https://sacdep24.monamedia.net/wp-content/uploads/2023/02/About-bnr-2-1.png" alt=""
           class="rounded-xl mb-4" />
-        <span class="block text-[18.75px] text-gray-500 mb-2 py-10">
+        <span class="block text-[15px] text-gray-500 mb-2 py-4">
           “Chúng tôi cung cấp những sản phẩm mỹ phẩm chất lượng cao, được nghiên
           cứu và phát triển để đáp ứng nhu cầu chăm sóc sắc đẹp toàn diện. Với
           thành phần chiết xuất từ thiên nhiên, sản phẩm của chúng tôi mang lại
@@ -33,7 +33,7 @@
         </span>
         <div class="flex justify-end">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80"
-            class="w-50 text-gray-700 hover:text-yellow-600 transition-colors duration-200">
+            class="w-[150px] text-gray-700 hover:text-yellow-600 transition-colors duration-200">
             <g>
               <path class="fill-current"
                 d="M26.5,14.3c-0.1,0.2-0.2,0.5-0.3,0.7v0H26v0.1c-0.2,0.2-0.4,0.5-0.6,0.8c-0.1,0.2-0.2,0.4-0.3,0.5h0  c0,0.1-0.1,0.1-0.1,0.2c-0.1,0.3-0.3,0.5-0.5,0.8c-0.1,0-0.1,0.2-0.2,0.3v0.1c-0.2,0.1-0.3,0.3-0.3,0.5c-0.2,0.4-0.4,0.7-0.6,1  c0,0,0,0,0,0.1h0c0,0.1-0.1,0.2-0.2,0.3c-0.4,0.5-0.7,1-0.9,1.5c0,0,0,0,0,0.1c-0.1,0.2-0.2,0.4-0.3,0.6c-0.2,0.2-0.3,0.5-0.3,0.7  l-0.1,0.1c-0.1,0.1-0.1,0.1-0.1,0.2c0,0,0,0.1,0,0.1h0c0,0.1-0.1,0.2-0.2,0.2c-0.2,0.3-0.4,0.5-0.5,0.9c-0.2,0.4-0.4,0.8-0.6,1.3  c-0.4,0.5-0.7,1-0.9,1.6h0c0,0.1-0.1,0.1-0.1,0.2c0,0.1-0.1,0.1-0.1,0.2c-0.1,0.1-0.2,0.2-0.2,0.3c-0.1,0.2-0.2,0.4-0.3,0.6  c-0.1,0-0.1,0.1-0.1,0.2c-0.2,0.2-0.3,0.5-0.4,0.7c-0.2,0.3-0.4,0.7-0.5,1c0,0,0,0.1,0,0.2c-0.2,0.1-0.3,0.3-0.3,0.6v0  c0,0.1,0,0.2-0.1,0.3v0c0,0.1-0.1,0.1-0.1,0.2c-0.3,0.4-0.5,0.9-0.6,1.4c0,0,0,0.1-0.1,0.2c-0.1,0.1-0.1,0.2-0.2,0.3  c-0.3,0.5-0.5,1.1-0.7,1.7c-0.2,0.3-0.3,0.6-0.3,0.9c0,0.1,0,0.1-0.1,0.2c-0.1,0.1-0.1,0.3-0.2,0.4c-0.4,0.8-0.7,1.7-0.9,2.6  l-0.1,0.2c0,0.1,0,0.2-0.1,0.3c-0.2,0.3-0.3,0.6-0.3,0.9c-0.1,0.2-0.2,0.5-0.3,0.8c0,0.1-0.1,0.1-0.1,0.2c-0.1,0.2-0.2,0.5-0.3,0.7  c-0.1,0.2-0.2,0.4-0.2,0.6c-0.1,0.1-0.1,0.2-0.1,0.3c-0.1,0.2-0.2,0.4-0.2,0.6v0c0,0.1,0,0.2-0.1,0.2c-0.1,0.1-0.2,0.3-0.2,0.4  c-0.2,0.6-0.4,1.3-0.6,2c-0.1,0.2-0.1,0.5-0.1,0.7c-0.3,0.6-0.4,1.3-0.5,1.9c-0.1,0.3-0.2,0.6-0.1,0.9h0c0.3,0.2,0.3,0.2,0.4,0.1  c0.1-0.1,0.3-0.2,0.4-0.3c0.7-0.9,1.5-1.7,2.2-2.5l2-2.2c0.7-0.8,1.5-1.6,2.2-2.4c0.8-0.7,1.5-1.5,2.2-2.2l0.1-0.1  c0.3-0.3,0.3-0.3,0.7,0c0.3,0.2,0.3,0.3,0,0.5c-0.3,0.3-0.5,0.5-0.8,0.8c-0.1,0.1-0.2,0.2-0.3,0.3c0,0,0-0.1,0-0.1c0,0,0,0-0.1,0.1  s-0.1,0.1-0.1,0.1c0,0-0.1,0-0.1,0.1c0,0,0,0.1-0.1,0.1c-0.1,0.1-0.2,0.1-0.3,0.2c-0.6,0.7-1.3,1.5-2,2.1c-0.1,0.1-0.1,0.2-0.1,0.3  c-0.1,0.1-0.1,0.1-0.2,0.2l0.1-0.1c0,0,0-0.1,0.1-0.1c0.2-0.1,0.3-0.2,0.4-0.4c0.1-0.2,0.3-0.3,0.5-0.5c0,0.1-0.1,0.3-0.3,0.4  l-2.3,2.6c-0.5,0.6-0.9,1.2-1.4,1.7c-0.7,0.9-1.4,1.7-2.2,2.4c-0.2,0.2-0.4,0.3-0.6,0.4c-0.4,0.3-0.9,0.2-1.3-0.1  c-0.1-0.1-0.1-0.1-0.2-0.2c-0.3-0.2-0.5-0.6-0.6-1c0-0.4,0-0.8,0-1.2c0.3-1.5,0.6-3,1.1-4.4c0.1-0.5,0.3-1,0.4-1.6  c0-0.1,0-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.2c-0.2-0.1-0.2-0.2-0.3-0.4c0-0.2,0-0.4,0-0.6c0-0.1-0.1-0.2-0.3-0.1l-0.1,0.1v-0.1  c0,0-0.1,0.1-0.1,0.1c0,0.1-0.1,0.2-0.2,0.3c0,0,0,0.1-0.1,0.1c0,0-0.1,0.1-0.1,0.1h0.1L10,41.9v0c-1,1.4-2.3,2.5-3.7,3.4  c-0.3,0.2-0.7,0.4-1.1,0.4c-0.3,0.1-0.6,0.1-0.8,0c-0.6-0.2-1-0.6-1.3-1.2C3,44.4,3,44.2,3,44c0-0.4,0.1-0.8,0.2-1.1  c0.2-0.4,0.3-0.7,0.5-1c0.5-0.8,1.1-1.5,1.9-2c0.8-0.6,1.7-0.9,2.7-0.9c0.3,0,0.6,0.1,0.9,0.2c0.3,0.1,0.4,0.1,0.6-0.2  c0.3-0.6,0.6-1.1,0.9-1.6c0.8-1.4,1.6-2.7,2.4-4.1c0.6-1.1,1.2-2.2,1.8-3.3l0.9-1.7c0.1-0.3,0.3-0.6,0.5-0.9  c0.1-0.3,0.3-0.6,0.5-0.9c0.6-1.1,1.3-2.3,1.9-3.4l1.8-3.1c0.5-0.9,1.1-1.8,1.7-2.7l2.6-3.8c0.1-0.2,0.3-0.4,0.5-0.6  c0.1-0.2,0.4-0.2,0.5-0.1c0,0,0,0,0.1,0.1c0.3,0.2,0.5,0.5,0.7,0.8C26.6,14,26.7,14.1,26.5,14.3 M8,41.6c0.3-0.4,0.6-0.8,0.9-1.2  c0.1-0.2,0.2-0.3,0.3-0.5c0-0.1,0-0.2-0.1-0.2c0,0,0,0,0,0H8.8c-0.4,0-0.9,0.1-1.2,0.3c-0.4,0.2-0.8,0.5-1.2,0.8  c-0.1,0.1-0.3,0.3-0.5,0.3c0.1-0.3,0.3-0.3,0.4-0.5c0.1-0.1,0.3-0.1,0.3-0.3c-0.1,0-0.3,0.1-0.3,0.2c-0.5,0.3-1,0.8-1.2,1.4  c-0.2,0.1-0.3,0.2-0.3,0.4C4.9,42.2,5,42.1,5,41.9c0.1-0.1,0.3-0.2,0.3-0.4c0.2-0.1,0.3-0.3,0.5-0.4c0,0.2-0.1,0.3-0.3,0.4  c-0.4,0.4-0.7,0.8-0.9,1.3c-0.2,0.5-0.3,0.9-0.3,1.4c0,0.2,0.1,0.3,0.3,0.2c0.3-0.1,0.6-0.3,0.9-0.5C6.4,43.3,7.2,42.5,8,41.6   M4.5,41.4L4.5,41.4L4.5,41.4C4.6,41.3,4.6,41.3,4.5,41.4 M4.5,42.6c0.1,0,0.2-0.1,0.2-0.3C4.6,42.4,4.6,42.5,4.5,42.6 M4.6,41.2  h0.1C4.7,41.2,4.7,41.2,4.6,41.2C4.7,41.2,4.7,41.2,4.6,41.2 M4.8,41.1L4.8,41.1L4.8,41.1c0.1,0.1,0.2,0,0.2,0H4.8L4.8,41.1  C4.8,41.1,4.8,41.1,4.8,41.1 M4.8,41.3L4.8,41.3C4.8,41.3,4.8,41.3,4.8,41.3L4.8,41.3z M4.8,41L4.8,41L4.8,41L5,40.9v-0.1L4.8,41  C4.9,41,4.9,41,4.8,41 M4.9,41.1C4.9,41.1,5,41.1,4.9,41.1c0,0,0.1,0,0.1,0H4.9z M5,40.8l0.1,0.1H5V41l0.1-0.1  c0.3-0.2,0.5-0.4,0.6-0.7c0,0,0-0.1,0-0.1c0,0,0,0-0.1,0.1C5.4,40.3,5.2,40.5,5,40.8 M5.8,40.1c0.1,0,0.2,0,0.2-0.1  C5.9,40,5.9,40,5.8,40.1 M7.9,42.9L7.9,42.9L7.9,42.9L8,42.6v0.1c0,0,0.1,0,0.1-0.1H8l0.1-0.1l0.1-0.1v0.1c0,0,0.1,0,0.1-0.1  c0.2-0.1,0.3-0.3,0.4-0.5c0,0,0,0,0,0c0,0,0,0,0,0h0c0,0,0,0,0.1-0.1v0.1c0,0,0.1,0,0.1-0.1H8.6c0,0,0-0.1,0.1-0.1c0,0,0,0.1,0,0.1  c0,0,0,0,0.1-0.1H8.7c0,0,0.1-0.1,0.1-0.1c0-0.1,0-0.1,0-0.2c0,0,0,0,0.1,0v0.2H8.8v0.1c0,0,0,0,0.1-0.1c0.1-0.1,0.2-0.2,0.2-0.3H9  c0,0-0.1,0-0.1,0.1v-0.1c0,0,0,0,0.1,0c0,0,0,0,0.1-0.1v0.1c0,0,0.1,0,0.1-0.1H9.1c0,0,0.1-0.1,0.1-0.1c0-0.1,0-0.1,0-0.2  c0,0,0-0.1,0-0.1h0.1v0.2c0.1-0.1,0.1-0.2,0.2-0.3H9.5c0,0,0.1-0.1,0.1-0.1c0,0,0,0,0,0.1c0,0,0,0,0.1-0.1H9.6v-0.2  c-0.1,0.1-0.3,0.3-0.3,0.4c0,0-0.1,0-0.1,0.1c-0.1,0.1-0.3,0.3-0.3,0.4l-0.1,0.1c-0.2,0.2-0.4,0.5-0.6,0.8  c-0.3,0.3-0.7,0.7-0.9,1.1c0.2,0,0.3-0.1,0.4-0.2L7.9,42.9L7.9,42.9C7.8,42.9,7.8,42.9,7.9,42.9 M7.8,43.8c-0.1,0-0.2,0.1-0.3,0.2  C7.7,44,7.7,43.9,7.8,43.8 M7.9,42.8L7.9,42.8L7.9,42.8C7.8,42.8,7.8,42.8,7.9,42.8 M10.5,40.6L10.5,40.6c-0.2,0.1-0.2,0.1-0.3,0.2  c-0.6,0.8-1.2,1.5-1.8,2.3c-0.1,0.1-0.1,0.2-0.2,0.3c0,0,0,0.1-0.1,0.1C8,43.5,8,43.6,8,43.7c0.1,0,0.2-0.1,0.2-0.2  c0,0,0.1-0.1,0.1-0.1c0.2-0.1,0.3-0.2,0.4-0.3c0.7-0.7,1.3-1.5,1.8-2.3c0,0,0,0,0-0.1C10.5,40.7,10.5,40.6,10.5,40.6  C10.5,40.6,10.5,40.6,10.5,40.6 M8.1,42.6L8.1,42.6C8.1,42.6,8.1,42.6,8.1,42.6L8.1,42.6z M9.2,41.1L9.2,41.1  C9.2,41.1,9.3,41.1,9.2,41.1L9.2,41.1z M9.7,40.2h0.1l0.1-0.1C9.7,40,9.7,40,9.7,40.2 M10.2,41.7L10.2,41.7L10.2,41.7L10.2,41.7z   M10.5,41.2L10.5,41.2L10.5,41.2L10.5,41.2L10.5,41.2L10.5,41.2z M11.3,39.4c0.4-0.5,0.7-1,1-1.5c0-0.1,0.1-0.2,0-0.3  c-0.4,0.5-0.7,1-1,1.6C11.3,39.1,11.3,39.2,11.3,39.4c-0.2,0.1-0.4,0.3-0.5,0.6V40c0,0,0.1,0,0.1,0c0,0,0,0,0,0  C11.1,39.8,11.3,39.6,11.3,39.4 M12.6,37.9c-0.3,0.3-0.5,0.6-0.6,1c-0.3,0.2-0.5,0.6-0.6,0.9c-0.3,0.3-0.4,0.7-0.2,1.1  c0.1,0.2,0.1,0.4,0.1,0.6c0,0.1,0,0.2,0.1,0.2c0,0,0-0.1,0.1-0.2c0.3-0.9,0.6-1.7,0.9-2.6c0-0.1,0-0.1,0-0.2c0-0.1,0-0.1-0.1-0.2  L12.6,37.9z M11.5,39.8h-0.1C11.4,39.7,11.5,39.7,11.5,39.8C11.5,39.8,11.5,39.8,11.5,39.8 M11.7,46c-0.1,0.1-0.2,0.3-0.2,0.5  C11.6,46.3,11.7,46.1,11.7,46 M12.1,44.5L12.1,44.5C12.1,44.5,12.1,44.5,12.1,44.5 M12.9,36.8c-0.1,0-0.2,0.1-0.2,0.3  C12.8,37,12.9,36.9,12.9,36.8 M12.9,41.9c-0.1,0.1-0.2,0.3-0.2,0.5C12.8,42.3,12.9,42.1,12.9,41.9 M13.3,40.6c0,0.1,0,0.2-0.1,0.3  C13.3,40.8,13.3,40.7,13.3,40.6 M13.7,39.7c0,0,0,0.1-0.1,0.1c0,0,0,0,0,0h0V39.7z M13.9,38.9c-0.1,0.1-0.2,0.3-0.2,0.5  C13.9,39.3,13.9,39.1,13.9,38.9 M14.4,37.7c-0.1,0.1-0.2,0.3-0.1,0.5C14.3,38.1,14.4,37.9,14.4,37.7 M14.3,39.2V39  C14.3,39.1,14.3,39.2,14.3,39.2L14.3,39.2z M14.3,47.3c0.4-0.4,0.8-0.8,1.2-1.2c0-0.1,0-0.2,0.1-0.2c-0.4,0.4-0.8,0.8-1.1,1.2  C14.3,47.2,14.3,47.3,14.3,47.3 M15.5,46.8C15.4,46.8,15.4,46.9,15.5,46.8L15.3,47c-0.4,0.3-0.6,0.6-0.9,1c0.4-0.3,0.6-0.6,0.9-1  C15.3,47,15.4,47,15.5,46.8C15.4,46.9,15.5,46.9,15.5,46.8 M14.5,37.3c0,0.1,0,0.1,0,0.2C14.5,37.4,14.5,37.4,14.5,37.3 M15.3,35.6  C15.2,35.5,15.2,35.6,15.3,35.6L15.3,35.6C15.2,35.6,15.2,35.6,15.3,35.6 M15.5,36c0-0.1,0-0.1,0-0.2h0.1  C15.6,35.9,15.6,35.9,15.5,36 M15.6,34.7c-0.1,0-0.1,0.1-0.1,0.2C15.6,34.8,15.6,34.7,15.6,34.7 M15.6,46.7  C15.6,46.7,15.5,46.7,15.6,46.7C15.5,46.8,15.5,46.7,15.6,46.7 M15.6,46.7c0.5-0.4,0.9-0.9,1.2-1.4c0,0,0,0,0.1-0.1l0.1-0.1  c0,0,0.1-0.1,0.1-0.1c0,0,0.1,0,0.1-0.1c0,0,0.1-0.1,0.1-0.1c0,0,0.1,0,0.1-0.1c0,0,0,0-0.1,0.1c0,0-0.1,0-0.1,0.1L17,45  c0,0,0,0-0.1,0.1l-0.1,0.1c0,0-0.1,0-0.1,0.1c-0.4,0.4-0.8,0.8-1.1,1.3C15.6,46.6,15.6,46.7,15.6,46.7 M15.8,34  c-0.1,0.1-0.1,0.2-0.2,0.3C15.8,34.3,15.9,34.2,15.8,34 M16,45.3C16,45.3,16.1,45.3,16,45.3C16.1,45.2,16.1,45.2,16,45.3L16,45.3z   M16.2,45.1c0.3-0.1,0.6-0.4,0.7-0.7C16.6,44.5,16.4,44.8,16.2,45.1 M16.5,32.6c-0.1,0.1-0.2,0.2-0.2,0.4  C16.4,32.9,16.5,32.8,16.5,32.6 M16.7,32.2c0,0,0,0.1-0.1,0.2C16.6,32.3,16.6,32.2,16.7,32.2 M16.7,32l-0.1,0.1  C16.7,32.1,16.7,32,16.7,32 M16.8,31.9C16.8,31.8,16.8,31.8,16.8,31.9L16.8,31.9C16.7,31.9,16.7,31.9,16.8,31.9  C16.8,31.9,16.8,31.9,16.8,31.9 M17.1,44.1c0.4-0.2,0.7-0.5,0.9-0.9C17.6,43.5,17.3,43.8,17.1,44.1 M17.6,30.1  c-0.1,0.1-0.1,0.1-0.1,0.2c-0.1,0.1-0.2,0.3-0.3,0.5c0.1-0.1,0.2-0.3,0.3-0.5C17.6,30.2,17.6,30.1,17.6,30.1 M17.9,29.8  c-0.1,0-0.2,0.1-0.2,0.3C17.8,30,17.8,29.8,17.9,29.8 M18.2,28.9c0,0.1-0.1,0.1-0.1,0.2C18.2,29,18.2,28.9,18.2,28.9 M18.5,43.5  c0,0,0,0.1-0.1,0.1L18.5,43.5C18.5,43.6,18.5,43.5,18.5,43.5 M18.5,28.2C18.5,28.2,18.5,28.2,18.5,28.2  C18.5,28.3,18.5,28.3,18.5,28.2C18.5,28.3,18.5,28.3,18.5,28.2L18.5,28.2z M18.5,42.5c0.2-0.1,0.4-0.2,0.5-0.3  c0.2-0.2,0.3-0.4,0.4-0.6C19.1,41.8,18.8,42.2,18.5,42.5 M19.4,42.6c-0.2,0.4-0.4,0.7-0.8,0.9C18.8,43.1,19,42.8,19.4,42.6   M18.9,27.4C18.9,27.5,18.8,27.5,18.9,27.4C18.8,27.5,18.9,27.5,18.9,27.4C18.9,27.5,18.9,27.5,18.9,27.4L18.9,27.4z M19.4,42.5  L19.4,42.5C19.4,42.5,19.4,42.5,19.4,42.5L19.4,42.5C19.4,42.6,19.4,42.6,19.4,42.5 M19.9,41.9L19.9,41.9c0,0.2-0.2,0.4-0.4,0.5  L19.9,41.9z M19.9,41.8h0.1H19.9C20,41.8,20,41.8,19.9,41.8 M19.9,41.9L19.9,41.9L19.9,41.9L19.9,41.9L19.9,41.9z M20.1,41.8  L20.1,41.8L20.1,41.8C20.1,41.7,20.1,41.7,20.1,41.8 M20.2,41.7L20.2,41.7L20.2,41.7C20.2,41.6,20.2,41.7,20.2,41.7 M20.3,40.7  c0.3-0.2,0.3-0.2,0.5-0.5C20.6,40.3,20.5,40.5,20.3,40.7 M21.8,22.7h-0.1C21.7,22.6,21.8,22.6,21.8,22.7  C21.8,22.7,21.8,22.7,21.8,22.7 M21.8,22.6C21.8,22.6,21.8,22.6,21.8,22.6L21.8,22.6C21.8,22.6,21.8,22.6,21.8,22.6  C21.8,22.6,21.8,22.6,21.8,22.6">
@@ -77,7 +77,7 @@
       </div>
     </div>
   </section>
-  <section class="relative flex items-center justify-center w-screen overflow-hidden px-10 min-h-[400px]">
+  <section class="relative flex items-center justify-center w-screen overflow-hidden px-10 min-h-[300px]">
     <div class="absolute top-0 left-0 w-screen h-full bg-contain bg-center bg-no-repeat -z-20" :style="{
       backgroundImage: `url(${nen1})`,
       backgroundColor: '#E2DFCC',
@@ -86,39 +86,39 @@
     <div class="absolute inset-0 w-screen h-full bg-white/60 opacity-30 -z-10"></div>
     <div class="flex flex-col md:flex-row gap-8 relative z-10">
       <div class="w-full md:w-1/2">
-        <div class="block text-[30px] md:text-[50px] text-black text-wrap font-light py-20">
+        <div class="block text-[30px] md:text-[40px] text-black text-wrap font-light py-20">
           <span class="">Các sản phẩm dưỡng da và chăm sóc sắc đẹp được tạo ra từ những tinh
             chất cao cấp</span>
         </div>
       </div>
       <div class="w-full md:w-1/2 flex flex-col pl-10 py-20">
-        <span class="block text-[18.75px] text-black mb-2">
+        <span class="block text-[16px] text-black mb-2">
           Các sản phẩm dưỡng da, trang điểm, và chăm sóc cá nhân của chúng tôi
           được tạo nên từ công thức tiên tiến, kết hợp giữa khoa học và thiên
           nhiên, giúp nuôi dưỡng làn da từ sâu bên trong, mang đến sự mềm mịn,
           tươi trẻ và rạng rỡ.
         </span>
-        <div class="grid grid-cols-3 gap-3 font-extrabold pt-10">
+        <div class="grid grid-cols-3 gap-3 font-extrabold pt-10 ">
           <div class="">
-            <div class="items-center pb-5 text-6xl text-[#b67e53]">
+            <div class="items-center pb-5 text-5xl text-[#b67e53] font-semibold ">
               <span>12</span>
               <span>k</span>
             </div>
-            <span class="text-2xl text-black hover:text-[#b67e53] transition-colors">Sản Phẩm Mỹ Phẩm</span>
+            <span class="text-lg text-black font-semibold  hover:text-[#b67e53] transition-colors">Sản Phẩm Mỹ Phẩm</span>
           </div>
           <div class="">
-            <div class="items-center pb-5 text-6xl text-[#b67e53]">
+            <div class="items-center pb-5 text-5xl text-[#b67e53] font-semibold">
               <span>5</span>
               <span>k</span>
             </div>
-            <span class="text-2xl text-black hover:text-[#b67e53] transition-colors">Nhân Viên</span>
+            <span class="text-lg text-black font-semibold hover:text-[#b67e53] transition-colors">Nhân Viên</span>
           </div>
           <div class="">
-            <div class="items-center pb-5 text-6xl text-[#b67e53]">
+            <div class="items-center pb-5 text-5xl text-[#b67e53] font-semibold">
               <span>20</span>
               <span>k</span>
             </div>
-            <span class="text-2xl text-black hover:text-[#b67e53] transition-colors">Khách Hàng Hài Lòng</span>
+            <span class="text-lg text-black font-semibold hover:text-[#b67e53] transition-colors">Khách Hàng Hài Lòng</span>
           </div>
         </div>
       </div>
@@ -133,18 +133,18 @@
     <div class="flex flex-col md:flex-row gap-8 relative z-10">
       <div class="w-full md:w-2/5">
         <div class="block text-brown-700 text-wrap font-light pt-20 pb-10">
-          <span class="text-[20px] uppercase text-gray-700">Các câu hỏi thường gặp</span><br />
-          <span class="text-[50px]">FAQ</span><br />
-          <span class="text-[20px] text-gray-700">
-            Bạn đang có những thắc mắc về sản phẩm mà chung tôi cung cấp, đừng
+          <span class="text-base uppercase text-gray-700">Các câu hỏi thường gặp</span><br />
+          <span class="text-[40px] py-4">FAQ</span><br />
+          <span class="text-[15px] text-gray-700">
+            Bạn đang có những thắc mắc về sản phẩm mà chung tôi cung cấp, <br>đừng
             lo lắng mọi thắc mắc của bạn sẽ được chúng tôi giải đáp ngay
           </span>
         </div>
         <div class="w-full max-w-3xl mx-auto font-quicksand pr-11 pb-20">
           <div v-for="(item, index) in items" :key="index"
-            class="border border-transparent rounded-lg mb-3 shadow-sm overflow-hidden">
-            <div class="flex justify-between items-center px-5 py-4 cursor-pointer bg-[#E2DFCC]" @click="toggle(index)">
-              <h3 class="text-lg md:text-lg font-bold text-black">
+            class="border border-transparent rounded-lg mb-1 shadow-sm overflow-hidden">
+            <div class="flex justify-between items-center px-4 py-4 cursor-pointer bg-[#E2DFCC]" @click="toggle(index)">
+              <h3 class="text-sm font-bold text-black">
                 {{ index + 1 }}. {{ item.question }}
               </h3>
               <div class="w-5 h-5 transform transition-transform duration-300 text-gray-600"
@@ -160,10 +160,9 @@
                 </svg>
               </div>
             </div>
-            <div v-show="activeIndex === index" class="px-5 py-4 bg-[#E2DFCC] text-gray-700 text-sm md:text-base">
+            <div v-show="activeIndex === index" class="px-5 py-2 bg-[#E2DFCC] text-gray-700 text-[13px]">
               {{ item.answer }}
             </div>
-            <div class="bg-white/60 h-1"></div>
           </div>
         </div>
       </div>
@@ -171,18 +170,18 @@
         <div class="relative p-6 rounded-xl">
           <!-- Tem "100% Natural" -->
           <img src="https://sacdep24.monamedia.net/wp-content/uploads/2023/03/leaf-outside.png" alt="Natural"
-            class="absolute top-4 left-4 w-[200px] h-auto z-10" />
+            class="absolute top-5 left-1 w-[170px] h-auto z-10" />
 
           <!-- Ảnh người mẫu chính -->
           <div class="flex flex-wrap justify-end items-start gap-4 relative">
             <!-- Ảnh sản phẩm -->
-            <div class="w-full sm:w-[73%] rounded-xl overflow-hidden">
+            <div class="w-full sm:w-[75%] rounded-xl overflow-hidden border-4 border-white">
               <img src="https://sacdep24.monamedia.net/wp-content/uploads/2024/10/Toggle-image-filler-1.webp"
                 alt="Sản phẩm" class="w-full h-auto object-cover rounded-xl border-7 border-white" />
             </div>
 
             <!-- Ảnh người mẫu -->
-            <div class="w-full sm:w-[50%] rounded-xl overflow-hidden absolute top-[230px] left-4">
+            <div class="w-full sm:w-[56%] rounded-xl overflow-hidden absolute top-[210px] left-[-50px] border-4 border-white">
               <img src="https://sacdep24.monamedia.net/wp-content/uploads/2024/10/Toggle-image-filler-2.webp"
                 alt="Người mẫu" class="w-full h-full object-cover rounded-xl border-7 border-white" />
             </div>
@@ -190,7 +189,7 @@
 
           <!-- Lá cây trang trí -->
           <img src="https://sacdep24.monamedia.net/wp-content/uploads/2023/02/leef-img-1.png" alt="Leaf"
-            class="absolute top-[515px] left-[465px] w-[150px] h-auto opacity-60" />
+            class="absolute top-[420px] left-[350px] w-[150px] h-auto opacity-60" />
         </div>
       </div>
     </div>
@@ -200,24 +199,24 @@
       <!-- Hình ảnh bên trái -->
       <div class="relative w-full md:w-1/2">
         <img src="https://sacdep24.monamedia.net/wp-content/uploads/2023/02/mask-image-bg-11.png" alt="Mask"
-          class="w-full sm:w-[90%] pl-40 pt-10 pb-10" />
+          class="w-full sm:w-[95%] pl-40 pt-10 pb-10" />
         <img src="https://sacdep24.monamedia.net/wp-content/uploads/2023/02/oil-img-with-nature-1.png" alt="Oil"
-          class="absolute top-0 left-0 w-full h-auto sm:w-[100%] pl-45 pt-25 pb-10" />
+          class="absolute top-20 right-0 w-full h-auto sm:w-[73%] pl-45 pt-25 pb-10" />
       </div>
 
       <!-- Nội dung bên phải -->
-      <div class="w-full md:w-1/2 text-center md:text-left pr-40">
-        <div class="block text-brown-700 text-wrap font-light pt-20 pb-10">
-          <span class="text-[20px] uppercase text-gray-700">Sản Phẩm Từ Tự Nhiên</span><br />
-          <span class="text-[50px] text-black">Giải Pháp Chống Lão <br />Hóa Tự Nhiên Cho Da</span><br />
-          <span class="text-[18px] text-gray-700">
+      <div class="w-full md:w-1/2 text-center md:text-left pr-[80px]">
+        <div class="block text-brown-700 text-wrap font-light pt-20 pb-8">
+          <span class="text-base uppercase text-gray-700">Sản Phẩm Từ Tự Nhiên</span><br />
+          <span class="text-[40px] text-black">Giải Pháp Chống Lão <br />Hóa Tự Nhiên Cho Da</span><br />
+          <span class="text-base text-gray-700">
             Công thức dịu nhẹ, phù hợp với mọi loại da. Làm mờ nếp nhăn và tái
             <br />tạo làn da trẻ trung.
           </span>
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <div class="text-[24px] text-black flex items-stretch">
-            <span class="inline-flex items-center justify-center text-black w-18 h-18">
+          <div class="text-[18px] text-black flex items-stretch">
+            <span class="inline-flex items-center justify-center text-black w-[72px] h-[72px]">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
                 class="w-full h-full fill-current">
                 <g>
@@ -273,8 +272,8 @@
             </span>
             <span class="self-center pl-4">Kết cấu mỏng nhẹ</span>
           </div>
-          <div class="text-[24px] text-black flex items-stretch">
-            <span class="inline-flex items-center justify-center w-18 h-18 text-black">
+          <div class="text-[18px] text-black flex items-stretch">
+            <span class="inline-flex items-center justify-center w-[72px] h-[72px] text-black">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
                 class="w-full h-full fill-current">
                 <g>
@@ -318,8 +317,8 @@
             </span>
             <span class="self-center pl-4">Không mùi hương</span>
           </div>
-          <div class="text-[24px] text-black flex items-stretch">
-            <span class="inline-flex items-center justify-center w-18 h-18 text-black">
+          <div class="text-[18px] text-black flex items-stretch">
+            <span class="inline-flex items-center justify-center w-[72px] h-[72px] text-black">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
                 class="w-full h-full fill-current">
                 <g>
@@ -373,10 +372,10 @@
                 </g>
               </svg>
             </span>
-            <span class="self-center pl-4">Sản phẩm được chứng <br />nhận</span>
+            <span class="self-center pl-4">Sản phẩm được <br>chứng nhận</span>
           </div>
-          <div class="text-[24px] text-black flex items-stretch">
-            <span class="inline-flex items-center justify-center w-18 h-18 text-black">
+          <div class="text-[18px] text-black flex items-stretch">
+            <span class="inline-flex items-center justify-center w-[72px] h-[72px] text-black">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
                 class="w-full h-full fill-current">
                 <g>
@@ -427,16 +426,16 @@
             <span class="self-center pl-4">Phục hồi hư tổn da</span>
           </div>
         </div>
-        <div class="grid grid-cols-3 gap-3 pt-12">
-          <div class="pt-4">
+        <div class="grid grid-cols-3 gap-3 pt-5 pb-[50px]">
+          <div class="pt-3">
             <a href="#"
-              class="px-7 py-2.5 text-[18px] uppercase text-white bg-[#B67E53] transition-colors duration-500 delay-200 hover:bg-[#86b85e]">
+              class="px-7 py-2.5 text-[14px] uppercase text-white bg-[#B67E53] transition-colors duration-500 delay-200 hover:bg-[#86b85e]">
               Xem sản phẩm
             </a>
           </div>
           <div class="flex items-center space-x-4">
             <!-- Icon -->
-            <div class="flex items-center justify-center w-14 h-14 bg-[#B67E53] rounded-full">
+            <div class="flex items-center justify-center w-10 h-10 bg-[#B67E53] rounded-full">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-5 h-5 text-white fill-current">
                 <path d="M69.164,74.43c-4.565,2.21-23.612-8.814-30.306-15.509c-1.876-1.877-3.624-3.877-5.234-5.987 
                                     c-1.055-1.387-2.035-2.796-2.941-4.225c-2.015-3.601-3.823-7.314-5.415-11.121c-0.056-0.16-0.108-0.319-0.163-0.479 
@@ -455,7 +454,7 @@
             <!-- Text -->
             <div class="pl-2">
               <div class="text-base text-gray-500">Gọi cho chúng tôi</div>
-              <h5 class="text-base font-semibold text-black">
+              <h5 class="text-sm font-semibold text-black">
                 <a href="tel:0313728397" target="_blank" rel="nofollow"
                   class="hover:text-emerald-600 transition-colors duration-300">
                   (+84) 0313-728-397
@@ -466,7 +465,7 @@
           <div class="flex items-start space-x-4">
             <!-- Icon -->
             <div class="shrink-0">
-              <div class="w-12 h-12 flex items-center justify-center bg-[#B67E53] rounded-full">
+              <div class="w-10 h-10 flex items-center justify-center bg-[#B67E53] rounded-full">
                 <span class="text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-5 h-5 fill-current">
                     <g>
@@ -497,7 +496,7 @@
             <!-- Text -->
             <div class="pl-2">
               <div class="text-base text-gray-500">Email</div>
-              <h5 class="text-base font-semibold text-black">
+              <h5 class="text-sm font-semibold text-black">
                 <a href="tel:0313728397" target="_blank" rel="nofollow"
                   class="hover:text-emerald-600 transition-colors duration-300">
                   info@themona.global
@@ -513,39 +512,33 @@
     <div class="mx-auto px-4">
       <!-- Heading -->
       <div class="block text-brown-700 text-wrap font-light pt-10 pb-5 text-center">
-        <span class="text-[20px] uppercase text-gray-700">BLOG & NEWS</span><br />
-        <span class="text-[50px]">Tin tức mới nhất</span>
+        <span class="text-base uppercase text-gray-700">BLOG & NEWS</span><br />
+        <span class="text-[40px]">Tin tức mới nhất</span>
       </div>
 
       <!-- Blog Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div v-for="post in posts" :key="post.id" class="bg-white overflow-hidden relative group">
-          <div class="h-[35rem] overflow-hidden rounded-lg group hover:w-[110%]">
+          <div class="h-[28rem] overflow-hidden rounded-lg group hover:w-[110%]">
             <img :src="post.image" :alt="post.title"
               class="w-full h-full object-cover rounded-lg transition-transform duration-1000 group-hover:-translate-x-0" />
           </div>
 
           <div
-            class="text-base text-black flex items-center gap-2 mb-1 px-8 py-1 bg-lime-50 w-1/3 rounded-lg hover:bg-lime-600 hover:text-white absolute left-0 top-5">
+            class="text-sm font-semibold text-black flex items-center gap-2 mb-1 px-8 py-1 bg-lime-50 w-1/3 rounded-lg hover:bg-lime-600 hover:text-white absolute left-[-10px] top-5">
             <i class="fas fa-calendar"></i> {{ post.date }}
           </div>
 
           <div class="p-4">
-            <div class="text-[15px] uppercase text-gray-500 py-4">
+            <div class="text-sm uppercase text-gray-500 py-4">
               <a :href="post.categoryLink" class="hover:text-[#b67e53] transition-colors">{{ post.category }}</a>
             </div>
-            <h4 class="font-semibold pb-4 text-[30px] uppercase text-black">
+            <h4 class="font-semibold pb-4 text-2xl uppercase text-black">
               <a :href="post.link" class="hover:text-[#b67e53] transition-colors">{{ post.title }}</a>
             </h4>
-            <p class="text-[18px] text-gray-500 pb-4">{{ post.excerpt }}</p>
-            <!-- <a
-                        :href="post.link"
-                        class="inline-flex items-center uppercase text-[18px] text-black hover:text-emerald-800 transition-colors group"
-                        >
-                        Xem thêm
-                        </a> -->
+            <p class="text-sm text-gray-500 pb-4">{{ post.excerpt }}</p>
             <a :href="post.link"
-              class="relative inline-block uppercase text-[18px] text-black group hover:text-[#b67e53] transition-transform duration-300">
+              class="relative inline-block uppercase text-sm text-black group hover:text-[#b67e53] transition-transform duration-300">
               <span class="relative z-10 flex items-center"> Xem thêm </span>
 
               <!-- Mảng màu di chuyển -->
@@ -591,7 +584,7 @@ const activeIndex = ref(0);
 
 const toggle = (index) => {
   // Không cho đóng item đầu tiên
-  if (index === 0) return;
+  if (index === 0);
   activeIndex.value = activeIndex.value === index ? null : index;
 };
 

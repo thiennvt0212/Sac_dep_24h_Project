@@ -1,16 +1,15 @@
-
 <script setup>
 import logo from "../assets/Image/logo-1-black.png";
 </script>
 
 <template>
-  <div class="pl-[30px] pr-[30px] pt-[80px] bg-[#e2dfcc]">
+  <div class="pl-[30px] pr-[30px] pt-[80px] bg-[#e2dfcc] text-black">
     <div class="flex flex-row pb-[50px]">
       <div class="flex-[2] flex">
         <div class="pr-[36px]">
-          <a>
+          <router-link to="/">
             <img :src="logo" alt="logo" class="w-[200px] h-auto mb-[20px]" />
-          </a>
+        </router-link>
           <p>
             Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Hac
             habitasse platea dictumst quisque.
@@ -107,7 +106,7 @@ import logo from "../assets/Image/logo-1-black.png";
               <li class="pt-[6px] pb-[6px] font-light hover-primary cursor-pointer">
                 <a>
                   <font-awesome-icon
-                    :icon="['fas', 'location-dot']"
+                    :="['fas', 'location-dot']"
                     class="pr-[5px]"
                   />Địa chỉ: 1073/23 CMT8, p.7, Q.Tân Bình, TP.HCM
                   </a>
@@ -138,4 +137,3 @@ import logo from "../assets/Image/logo-1-black.png";
 </template>
 
 <style scoped></style>
-
