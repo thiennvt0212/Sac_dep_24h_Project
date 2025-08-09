@@ -8,21 +8,28 @@
   outline: none;
 }
 
-.action-input:focus  {
-  border-color: #B67E53 ; 
+.action-input:focus {
+  border-color: #b67e53;
   outline: none;
 }
 
 .hover-primary {
-
   transition: all 0.3s ease;
 }
 .hover-primary:hover {
-  color: #B67E53 ; 
+  color: #b67e53;
 }
 
-.hover-modal{
+.hover-modal {
   transition: all 0.3s ease;
+}
+
+.hover-text-black-primary {
+  color: #000000;
+  transition: all 0.3s ease;
+}
+.hover-text-black-primary:hover {
+  color: #B67E53 ; 
 }
 
 .hover-text-primary {
@@ -30,7 +37,7 @@
   transition: all 0.3s ease;
 }
 .hover-text-primary:hover {
-  color: #B67E53 ; 
+  color: #b67e53;
 }
 
 .hover-btn-primary {
@@ -40,16 +47,14 @@
 }
 .hover-btn-primary:hover {
   background-position: top;
-  background-image: linear-gradient(to top, #B67E53 50%, transparent 50%);
+  background-image: linear-gradient(to top, #b67e53 50%, transparent 50%);
   background-size: 100% 200%;
   background-position: bottom;
-  color: white; 
+  color: white;
 }
 
-
-
 :root {
-  --button-color: #B67E53;
+  --button-color: #b67e53;
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
@@ -122,23 +127,11 @@ body {
 
   /* color: var(--color-text); */
   /* background: var(--color-background); */
-  transition:
-    color 0.5s,
-    background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: "Quicksand", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   font-size: 16px;
 
   text-rendering: optimizeLegibility;

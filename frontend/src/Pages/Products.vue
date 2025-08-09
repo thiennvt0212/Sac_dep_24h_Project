@@ -9,10 +9,21 @@
       <div
         class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center"
       >
-        <h1 class="text-6xl font-light text-white mb-30 tracking-wide capitalize pb-8 ">Sản Phẩm</h1>
+        <h1
+          class="text-6xl font-light text-white mb-30 tracking-wide capitalize pb-8"
+        >
+          Sản Phẩm
+        </h1>
         <p class="text-white text-sm mt-2">
-          <a href="/" class="hover:underline opacity-80 text-white capitalize pr-4">TRANG CHỦ</a> /
-          <span class="opacity-70 text-orange-400 capitalize pl-4">SẢN PHẨM</span>
+          <a
+            href="/"
+            class="hover:underline opacity-80 text-white capitalize pr-4"
+            >TRANG CHỦ</a
+          >
+          /
+          <span class="opacity-70 text-orange-400 capitalize pl-4"
+            >SẢN PHẨM</span
+          >
         </p>
       </div>
     </div>
@@ -176,9 +187,13 @@
           'lg:grid-cols-4': viewMode === 'grid4',
         }"
       >
-        <div
+        <router-link
           v-for="product in paginatedProducts"
           :key="product.name"
+          :to="{
+            name: 'product-details',
+            params: { name: product.name },
+          }"
           class="bg-pink-50 rounded-xl group relative"
         >
           <div class="relative">
@@ -228,7 +243,7 @@
               </span>
             </div>
           </div>
-        </div>
+        </router-link>
       </div>
 
       <!-- Phân trang -->
