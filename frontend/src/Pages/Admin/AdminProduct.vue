@@ -7,19 +7,21 @@
         <!-- Sản phẩm -->
         <div v-if="activeTab === 'products'" class="space-y-6">
           <!-- Thanh lọc/tìm kiếm -->
-          <div class="bg-white p-4 rounded-xl shadow-sm">
-            <div class="flex flex-wrap items-center gap-3">
-              <button
-                class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-              >
-                Lọc
-              </button>
+         <div class="bg-white p-4 rounded-xl shadow-sm">
+            <div class="flex flex-wrap justify-end items-center gap-3">
+              <!-- Ô tìm kiếm đã bỏ icon -->
+              <div class="relative flex-1 max-w-md ml-auto">
+                <input
+                  type="text"
+                  v-model="searchQuery"
+                  placeholder="Tìm kiếm theo tên hoặc mã sản phẩm..."
+                  class="w-full pl-4 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all text-amber-700"
+                  @keyup.enter="handleSearch"
+                />
+              </div>
             </div>
           </div>
-          <!-- <h2 class="text-2xl font-bold text-gray-800 mb-4">
-            {{ tabs(activeTab) }}
-          </h2> -->
-
+        
           <!-- Action buttons -->
           <div class="flex gap-3">
             <button
@@ -79,7 +81,7 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                   <tr
-                    v-for="item in products"
+                    v-for="item in filteredProducts"
                     :key="item.id"
                     class="hover:bg-gray-50 transition-colors"
                   >
@@ -161,8 +163,9 @@
       </main>
     </div>
 </template>
+
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useRouter, useRoute } from "vue-router";
 
 import productApi from "@/api/product";
@@ -172,8 +175,20 @@ const sidebarOpen = ref(true);
 const products = ref([]);
 const activeTab = ref("products");
 const showModal = ref(false);
+const searchQuery = ref("");
 const router = useRouter();
 const route = useRoute();
+
+// Computed property để lọc sản phẩm
+const filteredProducts = computed(() => {
+  if (!searchQuery.value) return products.value;
+  
+  const query = searchQuery.value.toLowerCase();
+  return products.value.filter(item => 
+    item.name.toLowerCase().includes(query) || 
+    item.sku.toLowerCase().includes(query)
+  );
+});
 
 onMounted(async () => {
   await loadProducts();
@@ -185,6 +200,10 @@ async function loadProducts() {
   } catch (err) {
     console.error("Lỗi khi load sản phẩm:", err);
   }
+}
+
+function handleSearch() {
+  // Không cần làm gì đặc biệt vì computed property sẽ tự động cập nhật
 }
 
 async function deleteProduct(id) {
@@ -209,28 +228,4 @@ const formatCurrency = (value) => {
     currency: "VND",
   }).format(value);
 };
-
-// const getTabTitle = (tab) => {
-//   const titles = {
-//     products: "Quản lý sản phẩm",
-//     inventory: "Quản lý kho hàng",
-//     sales: "Quản lý bán hàng",
-//     orders: "Quản lý đơn hàng",
-//     customers: "Quản lý khách hàng",
-//   };
-//   return titles[tab] || "Trang chủ";
-// };
-
-// const tabs = [
-//   { name: "admin-product", label: "Quản lý sản phẩm" },
-//   { name: "admin-category", label: "Quản lý loại sản phẩm" },
-//   { name: "admin-news", label: "Quản lý tin tức" },
-//   { name: "admin-users", label: "Quản lý tài khoản" },
-// ];
-
-// const currentTab = route.name; // lấy tab hiện tại từ URL
-
-// const goToTab = (name) => {
-//   router.push({ name });
-// };
 </script>
