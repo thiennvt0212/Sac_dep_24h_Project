@@ -19,8 +19,16 @@ import ProductsView from "../Pages/Products.vue";
 import AdminView from '../Pages/Admin.vue' 
 import ProductDetail from "@/Pages/ProductDetail.vue";
 
+// admin
+
+import AdminCategory from '@/Pages/Admin/AdminCategory.vue';
+import AdminNews from '@/Pages/Admin/AdminNews.vue';
+import AdminProduct from '@/Pages/Admin/AdminProduct.vue';
+import AdminUsers from '@/Pages/Admin/AdminUsers.vue';
+
 
 const routes = [
+
   {
     path: "/",
     name: "home",
@@ -62,6 +70,12 @@ const routes = [
     name: "product-details",
     component: ProductDetail,
   },
+
+
+  { path: '/admin/product', name: 'admin-product', component: AdminProduct },
+  { path: '/admin/category', name: 'admin-category', component: AdminCategory },
+  { path: '/admin/news', name: 'admin-news', component: AdminNews },
+  { path: '/admin/users', name: 'admin-users', component: AdminUsers },
 ];
 
 const router = createRouter({
