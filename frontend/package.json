@@ -17,6 +17,7 @@
     "aos": "^2.3.4",
     "axios": "^1.11.0",
     "flickity": "^3.0.0",
+    "pinia": "^3.0.3",
     "swiper": "^11.2.10",
     "vite-plugin-inspect": "^11.3.2",
     "vue": "^3.5.13",

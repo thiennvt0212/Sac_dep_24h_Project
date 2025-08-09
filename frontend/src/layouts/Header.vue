@@ -1,5 +1,7 @@
 <script setup>
   import bgImage from '../assets/Image/homeHeadImg.jpg';
+  import { useAuthStore } from '@/stores/auth';
+  const auth = useAuthStore();
 </script>
 
 <template>
@@ -21,10 +23,17 @@
     <div class="basis-1/3 flex justify-end" >
       
         <div class="flex items-center ml-4 mr-4 hover-text-primary cursor-pointer">
-          <router-link to="/account" class="flex items-center">
-        <font-awesome-icon :icon="['fas', 'user']"/>
-        <p class="pl-1 pr-1 font-medium ">ĐĂNG NHẬP</p>
-        </router-link>
+          <div>
+            <div v-if="auth.currentUser" class="flex items-center">
+              <font-awesome-icon :icon="['fas', 'user']" />
+              <p class="pl-1 pr-1 font-medium">{{ auth.currentUser.username }}</p>
+              <button @click="auth.logout()">Đăng xuất</button>
+            </div>
+            <router-link v-else to="/account" class="flex items-center">
+              <font-awesome-icon :icon="['fas', 'user']"/>
+              <p class="pl-1 pr-1 font-medium ">ĐĂNG NHẬP</p>
+            </router-link>
+          </div>
       </div>
       <div class="flex items-center ml-4 mr-4 hover-text-primary cursor-pointer">
         <font-awesome-icon :icon="['far', 'heart']" />
