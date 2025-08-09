@@ -204,7 +204,7 @@ const handleRegister = async () => {
             v-model="registerUsername"
             type="text"
             placeholder="Tên người dùng"
-            class="w-full border p-3 outline-none bg-transparent action-input pt-[10px] pb-[10px] pl-[20px] pr-[20px] leading-[38px] text-[16px] font-light"
+            class="w-full border p-3 outline-none bg-transparent mt-[30px] action-input pt-[10px] pb-[10px] pl-[20px] pr-[20px] leading-[38px] text-[16px] font-light"
           />
           <input
             v-model="registerEmail"
