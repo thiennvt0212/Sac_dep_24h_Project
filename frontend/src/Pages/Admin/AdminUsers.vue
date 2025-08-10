@@ -4,17 +4,6 @@
       class="flex-1 transition-all duration-300 ease-in-out bg-gray-50"
       :class="sidebarOpen ? 'ml-0 md:ml-0' : 'ml-0'"
     >
-      <!-- <div class="flex gap-3 p-6">
-        <button
-          class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1 transition-colors"
-          @click="showModal = true"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-          </svg>
-          Thêm mới
-        </button>
-      </div> -->
       <div class="flex gap-3 p-6">
         <button
           class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1 transition-colors"
@@ -29,7 +18,7 @@
           <input
             v-model="searchText"
             type="text"
-            placeholder="Tìm kiếm tên đăng nhập, email, họ tên..."
+            placeholder="Tìm kiếm tên đăng nhập, email, số điện thoại, họ tên..."
             class="border px-3 py-2 rounded-lg text-sm w-64"
           />
           <button
@@ -49,9 +38,9 @@
           <table class="min-w-full text-sm divide-y divide-gray-200">
             <thead class="bg-gray-50">
               <tr>
-                <th class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">ID</th>
                 <th class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Tên đăng nhập</th>
                 <th class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                <th class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Số điện thoại</th>
                 <th class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Họ tên</th>
                 <th class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Quyền</th>
                 <th class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Hành động</th>
@@ -59,9 +48,9 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
               <tr v-for="user in users" :key="user.id" class="hover:bg-gray-50 transition-colors">
-                <td class="px-4 py-3 text-gray-700">{{ user.id }}</td>
                 <td class="px-4 py-3 text-amber-600 font-medium">{{ user.username }}</td>
                 <td class="px-4 py-3">{{ user.email }}</td>
+                <td class="px-4 py-3">{{ user.phone }}</td>
                 <td class="px-4 py-3">{{ user.fullName }}</td>
                 <td class="px-4 py-3">{{ user.role }}</td>
                 <td class="px-4 py-3 flex flex-row">
@@ -162,6 +151,7 @@ async function handleSearch() {
     u =>
       u.username?.toLowerCase().includes(text) ||
       u.email?.toLowerCase().includes(text) ||
+      u.phone?.toLowerCase().includes(text) ||
       u.fullName?.toLowerCase().includes(text)
   );
   users.value = filtered;
