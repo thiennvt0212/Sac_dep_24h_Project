@@ -122,6 +122,14 @@ model Blog{
   image       String  // URL ảnh
 }
 
+model news{
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description     String
+  createdAt  DateTime @default(now())
+  image       String  // URL ảnh
+}
+
 model Comment {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   blogId     String   @db.ObjectId

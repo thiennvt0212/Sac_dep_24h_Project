@@ -20,7 +20,7 @@
             <input v-model="form.price" type="number" class="mt-1 w-full border rounded-md p-2" />
           </div>
           <div>
-            <label class="block text-sm font-medium">SKU</label>
+            <label class="block text-sm font-medium">Mã</label>
             <input v-model="form.sku" type="text" class="mt-1 w-full border rounded-md p-2" />
           </div>
           <div>
@@ -35,7 +35,7 @@
             <label class="block text-sm font-medium">Danh mục</label>
             <select v-model="form.category" class="mt-1 w-full border rounded-md p-2">
               <option disabled value="">-- Chọn danh mục --</option>
-              <option v-for="item in category" :key="item._id" :value="item._id">
+              <option v-for="item in category" :key="item._id" :value="String(item._id)">
                 {{ item.name }}
               </option>
             </select>
@@ -133,6 +133,7 @@ import productApi from '@/api/product'
 
 
 const category = ref([]);
+const products = ref([]);
 
 const props = defineProps({
   visible: Boolean
@@ -158,7 +159,16 @@ const createProduct = async () => {
 
 onMounted(async () => {
   await loadCategory();
+  await loadProducts();
 });
+
+async function loadProducts() {
+  try {
+    products.value = await productApi.getAll();
+  } catch (err) {
+    console.error("Lỗi khi load sản phẩm:", err);
+  }
+}
 
 async function loadCategory() {
   try {
