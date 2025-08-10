@@ -12,7 +12,6 @@ onMounted( async ()=> {
   try{
     const response = await api.get("/users");
     users.value = response;
-    console.log("Dữ liệu người dùng:", users.value[0].email);
   }catch(error) {
     console.error("Lỗi khi lấy dữ liệu người dùng:", error);
     alert("Lỗi khi lấy dữ liệu người dùng. Vui lòng thử lại sau.");
@@ -39,14 +38,18 @@ const handleLogin = () => {
     return;
   }
   const matchedUser = users.value.find(
-    (user) => (user.username === username.value) && (user.password === passwordLogin.value)
+    (user) => (user.username === username.value) && (user.password === passwordLogin.value) 
   );
 
   if(matchedUser) {
-    console.log("Đăng nhập thành công:", matchedUser);
     alert("Đăng nhập thành công!");
     auth.login(matchedUser);
-    router.push("/"); // Chuyển hướng về trang chủ sau khi đăng nhập thành công
+    if(matchedUser.role === "admin") {
+      router.push("/admin/product"); // Chuyển hướng đến trang quản trị nếu là admin
+    } else {
+      router.push("/"); // Chuyển hướng về trang chủ nếu là người dùng thường
+    }
+    
 
   } else {
     console.error("Tên đăng nhập hoặc mật khẩu không đúng.");

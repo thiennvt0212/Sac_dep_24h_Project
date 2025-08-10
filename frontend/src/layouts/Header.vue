@@ -1,7 +1,13 @@
 <script setup>
   import bgImage from '../assets/Image/homeHeadImg.jpg';
   import { useAuthStore } from '@/stores/auth';
+  import { useRouter } from 'vue-router';
   const auth = useAuthStore();
+  const router = useRouter();
+  const handleLogout = () => {
+    auth.logout();
+ 
+  }
 </script>
 
 <template>
@@ -27,7 +33,7 @@
             <div v-if="auth.currentUser" class="flex items-center">
               <font-awesome-icon :icon="['fas', 'user']" />
               <p class="pl-1 pr-1 font-medium">{{ auth.currentUser.username }}</p>
-              <button @click="auth.logout()">Đăng xuất</button>
+              <button @click="handleLogout">Đăng xuất</button>
             </div>
             <router-link v-else to="/account" class="flex items-center">
               <font-awesome-icon :icon="['fas', 'user']"/>
