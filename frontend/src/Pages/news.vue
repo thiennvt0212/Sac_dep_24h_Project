@@ -1,9 +1,10 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import BlogList from "@/Components/Blog/BlogList.vue";
 import BlogSidebar from "@/Components/Blog/BlogSidebar.vue";
 import bgImage from "../assets/Image/banner.png";
 import bannerImage from "@/assets/Image/banner-san-pham.png";
+import newsApi from "@/api/newsApi";
 const allPost = ref([
   {
     id: 1,
@@ -168,6 +169,19 @@ const allPost = ref([
     date: "10/03/2003",
   },
 ]);
+// Hàm lấy dữ liệu API
+async function fetchPosts() {
+  try {
+    const apiData = await newsApi.getAll();
+    allPost.value = [...apiData, ...allPost.value];
+  } catch (error) {
+    console.error("Lỗi tải tin tức:", error);
+  }
+}
+
+onMounted(() => {
+  fetchPosts();
+});
 </script>
 <template>
   <div
@@ -178,10 +192,19 @@ const allPost = ref([
     <div
       class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center"
     >
-      <h1 class="text-6xl font-light text-white mb-30 tracking-wide capitalize pb-8 ">Tin Tức</h1>
+      <h1
+        class="text-6xl font-light text-white mb-30 tracking-wide capitalize pb-8"
+      >
+        Tin Tức
+      </h1>
       <p class="text-white text-sm mt-2">
-        <a href="/" class="hover:underline opacity-80 text-white capitalize pr-4">TRANG CHỦ</a> /
-          <span class="opacity-70 text-orange-400 capitalize pl-4">TIN TỨC</span>
+        <a
+          href="/"
+          class="hover:underline opacity-80 text-white capitalize pr-4"
+          >TRANG CHỦ</a
+        >
+        /
+        <span class="opacity-70 text-orange-400 capitalize pl-4">TIN TỨC</span>
       </p>
     </div>
   </div>
