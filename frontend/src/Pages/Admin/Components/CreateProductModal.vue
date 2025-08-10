@@ -35,8 +35,8 @@
             <label class="block text-sm font-medium">Danh mục</label>
             <select v-model="form.category" class="mt-1 w-full border rounded-md p-2">
               <option disabled value="">-- Chọn danh mục --</option>
-              <option v-for="cat in categories" :key="cat._id" :value="cat._id">
-                {{ cat.name }}
+              <option v-for="item in category" :key="item._id" :value="item._id">
+                {{ item.name }}
               </option>
             </select>
           </div>
@@ -69,6 +69,7 @@
 
 <script>
 import axios from "axios";
+import categoryApi from '@/api/category';
 
 export default {
   props: {
@@ -127,8 +128,11 @@ export default {
 
 
 <script setup>
-import { reactive } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 import productApi from '@/api/product'
+
+
+const category = ref([]);
 
 const props = defineProps({
   visible: Boolean
@@ -149,6 +153,18 @@ const createProduct = async () => {
     emit('close')
   } catch (error) {
     console.error('Lỗi tạo sản phẩm:', error)
+  }
+}
+
+onMounted(async () => {
+  await loadCategory();
+});
+
+async function loadCategory() {
+  try {
+    category.value = await categoryApi.getAll();
+  } catch (err) {
+    console.error("Lỗi khi load loại sản phẩm:", err);
   }
 }
 </script>

@@ -23,7 +23,7 @@
           </div>
         
           <!-- Action buttons -->
-          <div class="flex gap-3">
+          <div class="flex gap-3 p-[24px]">
             <button
               class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1 transition-colors"
               @click="showModal = true"
@@ -47,7 +47,7 @@
           </div>
 
           <!-- Table -->
-          <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden pl-[24px] pr-[24px]">
             <div class="overflow-x-auto">
               <table class="min-w-full text-sm divide-y divide-gray-200">
                 <thead class="bg-gray-50">
@@ -66,6 +66,11 @@
                       class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider"
                     >
                       Tên sản phẩm
+                    </th>
+                    <th
+                      class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                        Giá
                     </th>
                     <th
                       class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider"
@@ -95,6 +100,9 @@
                     </td>
                     <td class="px-4 py-3 text-amber-600 font-medium">
                       {{ item.name }}
+                    </td>
+                    <td class="px-4 py-3 text-amber-600 font-medium">
+                    {{ formatCurrency(item.price) }}
                     </td>
                     <td class="px-4 py-3">
                       <span
@@ -218,9 +226,6 @@ async function deleteProduct(id) {
   }
 }
 
-const toggleSidebar = () => {
-  sidebarOpen.value = !sidebarOpen.value;
-};
 
 const formatCurrency = (value) => {
   return new Intl.NumberFormat("vi-VN", {
