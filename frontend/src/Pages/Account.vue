@@ -12,7 +12,6 @@ onMounted( async ()=> {
   try{
     const response = await api.get("/users");
     users.value = response;
-    console.log("Dữ liệu người dùng:", users.value);
   }catch(error) {
     console.error("Lỗi khi lấy dữ liệu người dùng:", error);
     alert("Lỗi khi lấy dữ liệu người dùng. Vui lòng thử lại sau.");
@@ -43,7 +42,6 @@ const handleLogin = () => {
   );
 
   if(matchedUser) {
-    console.log("Đăng nhập thành công:", matchedUser);
     alert("Đăng nhập thành công!");
     auth.login(matchedUser);
     if(matchedUser.role === "admin") {
