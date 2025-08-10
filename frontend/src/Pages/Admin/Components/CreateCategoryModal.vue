@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, watch } from "vue";
 import categoryApi from "@/api/category";
 
 const props = defineProps({
@@ -64,6 +64,15 @@ const form = reactive({
   name: "",
   description: "",
 });
+watch(
+  () => props.visible,
+  (isOpen) => {
+    if (isOpen) {
+      form.name = "";
+      form.description = "";
+    }
+  }
+);
 
 const createCategory = async () => {
   try {
