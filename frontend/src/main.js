@@ -33,6 +33,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import router from "./Router";
+import { createPinia } from "pinia";
 
 AOS.init();
 
@@ -63,6 +64,8 @@ library.add(
 );
 
 const app = createApp(App);
+const pinia = createPinia()
 app.component("font-awesome-icon", FontAwesomeIcon);
+app.use(pinia);
 app.use(router);
 app.mount("#app");

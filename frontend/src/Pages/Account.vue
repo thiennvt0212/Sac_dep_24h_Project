@@ -1,9 +1,26 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import imageCard1 from "../assets/Image/CA-bnr-1.webp";
 import imageCard2 from "../assets/Image/CA-bnr-2.webp";
 import bgImage from "../assets/Image/banner.png";
 import bannerImage from "@/assets/Image/banner-san-pham.png";
+import api from "../api/axiosClient";
+import { useAuthStore } from "@/stores/auth";
+import { useRouter } from "vue-router";
+const users = ref([]);
+onMounted( async ()=> {
+  try{
+    const response = await api.get("/users");
+    users.value = response;
+    console.log("Dữ liệu người dùng:", users.value[0].email);
+  }catch(error) {
+    console.error("Lỗi khi lấy dữ liệu người dùng:", error);
+    alert("Lỗi khi lấy dữ liệu người dùng. Vui lòng thử lại sau.");
+  }
+  
+})
+const router = useRouter();
+const auth = useAuthStore();
 
 const showLoginPassword = ref(false);
 const showRegisterPassword = ref(false);
@@ -11,21 +28,94 @@ const showRegisterPassword = ref(false);
 const username = ref("");
 const passwordLogin = ref("");
 
+const registerFullName = ref("");
 const registerUsername = ref("");
 const registerEmail = ref("");
 const registerPassword = ref("");
 
 const handleLogin = () => {
-  console.log("Tên đăng nhập:", username.value);
-  console.log("Mật khẩu:", passwordLogin.value);
+  if(!username.value || !passwordLogin.value) {
+    alert("Vui lòng nhập tên đăng nhập và mật khẩu.");
+    return;
+  }
+  const matchedUser = users.value.find(
+    (user) => (user.username === username.value) && (user.password === passwordLogin.value)
+  );
+
+  if(matchedUser) {
+    console.log("Đăng nhập thành công:", matchedUser);
+    alert("Đăng nhập thành công!");
+    auth.login(matchedUser);
+    router.push("/"); // Chuyển hướng về trang chủ sau khi đăng nhập thành công
+
+  } else {
+    console.error("Tên đăng nhập hoặc mật khẩu không đúng.");
+    alert("Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại.");
+  }
 };
 
-const handleRegister = () => {
-  console.log("Đăng ký:", {
-    username: registerUsername.value,
-    email: registerEmail.value,
-    password: registerPassword.value,
-  });
+const handleRegister = async () => {
+  // Kiểm tra dữ liệu đầu vào
+  if (!registerUsername.value || !registerEmail.value || !registerPassword.value) {
+    console.log("registerUsername.value: ", registerUsername.value);
+    console.log("registerEmail.value: ", registerEmail.value);
+    console.log("registerPassword.value: ", registerPassword.value);
+    alert("Vui lòng điền đầy đủ thông tin.");
+    return;
+  }
+  // Kiểm tra định dạng email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(registerEmail.value)) {
+    alert("Email không hợp lệ.");
+    return;
+  }
+  // Kiểm tra mật khẩu (ít nhất 6 ký tự)
+  if (registerPassword.value.length < 6) {
+    alert("Mật khẩu phải có ít nhất 6 ký tự.");
+    return;
+  }
+  try {
+    // Kiểm tra xem email đã tồn tại chưa
+    const response = await api.get("/users");
+    const usersList = response;
+    const existingUser = usersList.find(user => user.email === registerEmail.value);
+
+    if (existingUser) {
+      alert("Email này đã được sử dụng. Vui lòng dùng email khác.");
+      return;
+    }
+
+    // Tạo user mới
+    const newUser = {
+      fullName: registerFullName.value,
+      username: registerUsername.value,
+      email: registerEmail.value,
+      password: registerPassword.value, 
+    };
+
+    // Gửi lên API (nếu backend hỗ trợ)
+    await api.post("/users", newUser);
+
+    // Hoặc thêm vào danh sách tạm (frontend-only)
+    //users.value.push(newUser);
+
+    // Thông báo thành công
+    auth.login(newUser); // Đăng nhập ngay sau khi đăng ký
+    router.push("/"); // Chuyển hướng về trang chủ
+    alert("Đăng ký thành công! Bạn có thể đăng nhập ngay.");
+
+    // Reset form
+    registerUsername.value = "";
+    registerEmail.value = "";
+    registerPassword.value = "";
+    router.push("/")
+    // Tự động chuyển sang tab đăng nhập (nếu có) hoặc đăng nhập luôn
+    // Ví dụ: chuyển về login
+    // Có thể emit event nếu dùng trong modal
+  } catch (error) {
+    console.error("Lỗi khi đăng ký:", error);
+    alert("Đăng ký thất bại. Vui lòng thử lại sau.");
+  }
 };
 </script>
 
@@ -103,19 +193,28 @@ const handleRegister = () => {
 
       <div>
         <h2 class="text-2xl font-semibold mb-6">Đăng ký</h2>
-        <form class="">
+        <form class="" @submit.prevent="handleRegister">
           <input
+            v-model="registerFullName"
             type="text"
-            placeholder="Tên người dùng"
+            placeholder="Full Name"
             class="w-full border p-3 outline-none bg-transparent action-input pt-[10px] pb-[10px] pl-[20px] pr-[20px] leading-[38px] text-[16px] font-light"
           />
           <input
+            v-model="registerUsername"
+            type="text"
+            placeholder="Tên người dùng"
+            class="w-full border p-3 outline-none bg-transparent mt-[30px] action-input pt-[10px] pb-[10px] pl-[20px] pr-[20px] leading-[38px] text-[16px] font-light"
+          />
+          <input
+            v-model="registerEmail"
             type="email"
             placeholder="Địa chỉ Email"
             class="w-full border p-3 outline-none bg-transparent mt-[30px] action-input pt-[10px] pb-[10px] pl-[20px] pr-[20px] leading-[38px] text-[16px] font-light"
           />
           <div class="relative mt-[30px]">
             <input
+              v-model="registerPassword"
               :type="showRegisterPassword ? 'text' : 'password'"
               placeholder="Mật khẩu"
               class="w-full border p-3 pr-10 outline-none bg-transparent action-input pt-[10px] pb-[10px] pl-[20px] pr-[20px] leading-[38px] text-[16px] font-light"
