@@ -280,6 +280,8 @@ import img3 from "@/assets/Image/p3.jpg";
 import img4 from "@/assets/Image/p4.jpg";
 
 import bannerImage from "@/assets/Image/banner-san-pham.png";
+import productApi from "@/api/product";
+
 export default {
   name: "Products",
   data() {
@@ -301,138 +303,12 @@ export default {
         { name: "Mặt Nạ Dưỡng Da", image: cate6 },
         { name: "Son Môi", image: cate6 },
         { name: "Trang Điểm Mắt", image: cate6 },
-        { name: "Trang Điểm ", image: cate6 },
+        { name: "Trang Điểm", image: cate6 },
         { name: "Trang Điểm Mắt", image: cate6 },
       ],
-      products: [
-        {
-          name: "ACNE TREATING SERUM",
-          category: "Beauty Products",
-          price: "659,000",
-          oldPrice: "",
-          image: img1,
-        },
-        {
-          name: "ANTI PIGMENTATION COMBO",
-          category: "Beauty Products",
-          price: "359,000",
-          oldPrice: "580,000",
-          image: img2,
-        },
-        {
-          name: "ANTI-AGE SERUM",
-          category: "Beauty Products",
-          price: "320,000",
-          oldPrice: "580,000",
-          image: img3,
-        },
-        {
-          name: "ANTI-BLEMISH FACIAL SERUM",
-          category: "Beauty Products",
-          price: "435,000",
-          oldPrice: "",
-          image: img4,
-        },
-        {
-          name: "CBD GLOW SERUM",
-          category: "Beauty Products",
-          price: "489,000",
-          oldPrice: "",
-          image: img1,
-        },
-        {
-          name: "HERBAL MOISTURIZER",
-          category: "Beauty Products",
-          price: "379,000",
-          oldPrice: "420,000",
-          image: img1,
-        },
-        {
-          name: "NATURAL OIL SET",
-          category: "Beauty Products",
-          price: "599,000",
-          oldPrice: "",
-          image: img1,
-        },
-        {
-          name: "DAILY FACE WASH",
-          category: "Beauty Products",
-          price: "315,000",
-          oldPrice: "",
-          image: img1,
-        },
-        {
-          name: "CBD EYE SERUM",
-          category: "Beauty Products",
-          price: "419,000",
-          oldPrice: "490,000",
-          image: img2,
-        },
-        {
-          name: "BRIGHTENING OIL COMBO",
-          category: "Beauty Products",
-          price: "579,000",
-          oldPrice: "",
-          image: img3,
-        },
-        {
-          name: "GENTLE CLEANSER",
-          category: "Beauty Products",
-          price: "329,000",
-          oldPrice: "",
-          image: img4,
-        },
-
-        {
-          name: "GENTLE CLEANSER",
-          category: "Beauty Products",
-          price: "329,000",
-          oldPrice: "",
-          image: img4,
-        },
-        {
-          name: "GENTLE CLEANSER",
-          category: "Beauty Products",
-          price: "329,000",
-          oldPrice: "",
-          image: img4,
-        },
-        {
-          name: "GENTLE CLEANSER",
-          category: "Beauty Products",
-          price: "329,000",
-          oldPrice: "",
-          image: img4,
-        },
-        {
-          name: "GENTLE CLEANSER",
-          category: "Beauty Products",
-          price: "329,000",
-          oldPrice: "",
-          image: img4,
-        },
-        {
-          name: "GENTLE CLEANSER",
-          category: "Beauty Products",
-          price: "329,000",
-          oldPrice: "",
-          image: img4,
-        },
-        {
-          name: "GENTLE CLEANSER",
-          category: "Beauty Products",
-          price: "329,000",
-          oldPrice: "",
-          image: img4,
-        },
-        {
-          name: "GENTLE CLEANSER",
-          category: "Beauty Products",
-          price: "329,000",
-          oldPrice: "",
-          image: img4,
-        },
-      ],
+      products: [],
+      isLoading: false,
+      error: null,
     };
   },
   computed: {
@@ -467,6 +343,56 @@ export default {
         behavior: "smooth",
       });
     },
+    async fetchProducts() {
+      this.isLoading = true;
+      this.error = null;
+      try {
+        const response = await productApi.getAll();
+        // Kiểm tra và xử lý response
+        if (Array.isArray(response.data)) {
+          this.products = response.data;
+        } else if (Array.isArray(response)) {
+          this.products = response;
+        } else {
+          throw new Error("Dữ liệu sản phẩm không hợp lệ");
+        }
+      } catch (err) {
+        this.error = err.message || "Có lỗi xảy ra khi tải sản phẩm";
+        console.error("Lỗi khi tải sản phẩm:", err);
+        this.products = [];
+      } finally {
+        this.isLoading = false;
+      }
+    },
+    formatPrice(price) {
+      return new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+      }).format(price || 0);
+    },
+    sortProducts() {
+      switch (this.selectedSort) {
+        case "price-asc":
+          this.products.sort((a, b) => (a.price || 0) - (b.price || 0));
+          break;
+        case "price-desc":
+          this.products.sort((a, b) => (b.price || 0) - (a.price || 0));
+          break;
+        case "name-asc":
+          this.products.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+          break;
+        case "name-desc":
+          this.products.sort((a, b) => (b.name || "").localeCompare(a.name || ""));
+          break;
+        default:
+          // Không sắp xếp hoặc reset về thứ tự ban đầu
+          this.fetchProducts();
+      }
+      this.currentPage = 1; // Reset về trang đầu khi sắp xếp
+    },
+  },
+  async created() {
+    await this.fetchProducts();
   },
 };
 </script>
