@@ -4,18 +4,7 @@
       class="flex-1 transition-all duration-300 ease-in-out bg-gray-50"
       :class="sidebarOpen ? 'ml-0 md:ml-0' : 'ml-0'"
     >
-      <div v-if="activeTab === 'categories'" class="space-y-6">
-        <!-- Thanh lọc/tìm kiếm -->
-        <div class="bg-white p-4 rounded-xl shadow-sm">
-          <div class="flex flex-wrap items-center gap-3">
-            <button
-              class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-            >
-              Lọc
-            </button>
-          </div>
-        </div>
-
+      <div v-if="activeTab === 'categories'" class="space-y-6 p-6">
         <div class="flex gap-3">
           <button
             class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1 transition-colors"
@@ -37,6 +26,34 @@
             </svg>
             Thêm mới
           </button>
+          <div class="flex gap-3 flex-1 justify-end">
+            <input
+              v-model="searchText"
+              type="text"
+              placeholder="Tìm kiếm danh mục"
+              class="border px-3 py-2 rounded-lg text-sm w-64"
+            />
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1 transition-colors"
+              @click="handleSearch"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
+                />
+              </svg>
+              Tìm kiếm
+            </button>
+          </div>
         </div>
 
         <!-- Table -->
@@ -69,13 +86,20 @@
                   :key="category.id"
                   class="hover:bg-gray-50 transition-colors"
                 >
-                  <td class="px-4 py-3 text-gray-700">{{ category.name }}</td>
-                  <td class="px-4 py-3 text-amber-600 font-medium">
+                  <td
+                    class="px-4 py-3 max-w-[134px] break-words first-letter:uppercase text-gray-700"
+                  >
+                    {{ category.name }}
+                  </td>
+                  <td
+                    class="px-4 py-3 max-w-[854px] break-words first-letter:uppercase text-amber-600 font-medium"
+                  >
                     {{ category.description }}
                   </td>
 
                   <td class="px-4 py-3 flex flex-row">
                     <button
+                      @click="openEditCategory(category)"
                       class="flex flex-row pt-[8px] pr-[18px] pb-[8px] pl-[18px] mt-4 mb-4 ml-2 mr-2 rounded-md font-medium bg-green-400 hover:opacity-75"
                     >
                       <svg
@@ -118,10 +142,19 @@
                 </tr>
               </tbody>
             </table>
+            <div v-if="searchNotFound" class="text-center text-red-500 py-4">
+              Không tìm thấy tên danh mục phù hợp
+            </div>
             <CreateCategoryModal
               :visible="showModal"
               @close="showModal = false"
               @created="loadCategories"
+            />
+            <EditCategoryModal
+              :visible="showEditModal"
+              :category="editingCategory"
+              @close="showEditModal = false"
+              @updated="loadCategories"
             />
           </div>
         </div>
@@ -134,11 +167,16 @@ import { ref, onMounted } from "vue";
 
 import categoryApi from "@/api/category";
 import CreateCategoryModal from "../Admin/Components/CreateCategoryModal.vue";
+import EditCategoryModal from "../Admin/Components/EditCategoryModal.vue"; // Thêm dòng này
 
 const sidebarOpen = ref(true);
 const categories = ref([]);
 const activeTab = ref("categories");
 const showModal = ref(false);
+const searchText = ref("");
+const searchNotFound = ref(false);
+const showEditModal = ref(false);
+const editingCategory = ref(null);
 
 onMounted(async () => {
   await loadCategories();
@@ -162,5 +200,22 @@ async function deleteCategory(id) {
     console.error("Lỗi khi xoá sản phẩm:", error);
     alert("Xoá thất bại!");
   }
+}
+function openEditCategory(category) {
+  editingCategory.value = { ...category };
+  showEditModal.value = true;
+}
+async function handleSearch() {
+  const text = searchText.value.trim().toLowerCase();
+  if (!text) {
+    await loadCategories();
+    searchNotFound.value = false;
+    return;
+  }
+  const filtered = categories.value.filter((category) =>
+    category.name?.toLowerCase().includes(text)
+  );
+  categories.value = filtered;
+  searchNotFound.value = filtered.length === 0;
 }
 </script>
