@@ -36,12 +36,28 @@
             <label class="block mb-1 font-medium">Tên công ty</label>
             <input v-model="form.companyName" type="text" class="w-full border rounded px-3 py-2" />
           </div>
-          <div class="mb-3 md:col-span-2 w-[49%]">
+          <!-- <div class="mb-3 md:col-span-2 w-[49%]">
             <label class="block mb-1 font-medium">Quyền <span class="text-red-500">*</span></label>
             <select v-model="form.role" class="w-full border rounded px-3 py-2">
               <option value="user">User</option>
               <option value="admin">Admin</option>
             </select>
+          </div> -->
+          <div class="mb-3 md:col-span-2 w-[49%] relative">
+            <label class="block mb-1 font-medium">
+              Quyền <span class="text-red-500">*</span>
+            </label>
+            <select v-model="form.role" 
+                    class="w-full border rounded px-3 py-2 appearance-none pr-10">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+            <!-- Icon mũi tên -->
+            <svg class="w-4 h-4 absolute right-3 top-[70%] -translate-y-1/2 pointer-events-none text-gray-500"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
         </div>
         <div class="flex gap-2 mt-4 justify-end">
