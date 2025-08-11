@@ -65,7 +65,7 @@
                   <th
                     class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Các danh mục
+                    Danh mục
                   </th>
                   <th
                     class="px-4 py-3 text-left font-medium text-gray-500 uppercase tracking-wider"

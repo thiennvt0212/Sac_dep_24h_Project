@@ -118,6 +118,7 @@
                     </td>
                     <td class="px-4 py-3 flex flex-row">
                       <button
+                         @click="openEditProduct(product)"
                         class="flex flex-row pt-[8px] pr-[18px] pb-[8px] pl-[18px] mt-4 mb-4 ml-2 mr-2 rounded-md font-medium bg-green-400 hover:opacity-75"
                       >
                         <svg
@@ -165,6 +166,12 @@
                 @close="showModal = false"
                 @created="loadProducts"
               />
+              <EditProductModal
+            :visible="showEditModal"
+            :user="editingProduct"
+            @close="showEditModal = false"
+            @updated="loadProducts"
+          />
             </div>
           </div>
         </div>
@@ -178,6 +185,7 @@ import { useRouter, useRoute } from "vue-router";
 
 import productApi from "@/api/product";
 import CreateProductModal from "../Admin/Components/CreateProductModal.vue";
+import EditProductModal from "./Components/EditProductModal.vue";
 
 const sidebarOpen = ref(true);
 const products = ref([]);
@@ -186,6 +194,8 @@ const showModal = ref(false);
 const searchQuery = ref("");
 const router = useRouter();
 const route = useRoute();
+const showEditModal = ref(false);
+const editingProduct = ref(null);
 
 // Computed property để lọc sản phẩm
 const filteredProducts = computed(() => {
@@ -208,6 +218,11 @@ async function loadProducts() {
   } catch (err) {
     console.error("Lỗi khi load sản phẩm:", err);
   }
+}
+
+function openEditProduct(products) {
+  editingProduct.value = { ...products };
+  showEditModal.value = true;
 }
 
 function handleSearch() {

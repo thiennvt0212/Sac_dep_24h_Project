@@ -3,7 +3,7 @@
     <div class="bg-white rounded-lg shadow-lg w-[800px] p-6">
       <!-- Header -->
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">Tạo sản phẩm mới</h2>
+        <h2 class="text-lg font-semibold">Cập nhật sản phẩm</h2>
         <button @click="$emit('close')" class="text-gray-500 hover:text-gray-700">&times;</button>
       </div>
 
@@ -46,22 +46,21 @@
           </div>
           <div>
             <label class="block text-sm font-medium">Ảnh sản phẩm</label>
-            <input v-model="form.image" class="mt-1 w-full border rounded-md p-2" />
-            <!-- <input type="file" @change="onFileChange" accept="image/*" class="mt-1 w-full" /> -->
+            <input type="file" @change="onFileChange" accept="image/*" class="mt-1 w-full" />
           </div>
           <!-- Preview nhỏ -->
-          <!-- <div class="flex justify-center border border-dashed rounded-md p-2">
+          <div class="flex justify-center border border-dashed rounded-md p-2">
             <img v-if="preview" :src="preview" alt="Preview" class="max-h-24 object-contain" />
             <span v-else class="text-gray-400 text-sm">Preview ảnh</span>
-          </div> -->
+          </div>
         </div>
       </div>
 
       <!-- Footer -->
       <div class="mt-6 flex justify-end">
-        <button @click="createProduct"
+        <button @click="updateProduct"
           class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">
-          Tạo
+          Cập nhật
         </button>
       </div>
     </div>
@@ -69,14 +68,18 @@
 </template>
 
 <script setup>
-import { reactive, ref, onMounted, nextTick } from 'vue';
+import { reactive, ref, watch, onMounted } from 'vue';
 import productApi from '@/api/product';
 import categoryApi from '@/api/category';
 
 const props = defineProps({
-  visible: Boolean
+  visible: Boolean,
+  product: {
+    type: Object,
+    default: () => ({})
+  }
 });
-const emit = defineEmits(['close', 'created']);
+const emit = defineEmits(['close', 'updated']);
 
 const category = ref([]);
 const preview = ref(null);
@@ -91,6 +94,24 @@ const form = reactive({
   image: null
 });
 
+// Khi prop product thay đổi hoặc modal mở thì fill dữ liệu
+watch(
+  () => props.product,
+  (val) => {
+    if (val && val.id) {
+      form.name = val.name || '';
+      form.description = val.description || '';
+      form.price = val.price || '';
+      form.sku = val.sku || '';
+      form.category = val.category || '';
+      form.quantity = val.quantity || '';
+      preview.value = typeof val.image === 'string' ? val.image : null;
+      form.image = null; // reset để khi upload mới
+    }
+  },
+  { immediate: true }
+);
+
 const onFileChange = (e) => {
   const file = e.target.files[0];
   if (file) {
@@ -99,9 +120,11 @@ const onFileChange = (e) => {
   }
 };
 
-const createProduct = async () => {
-
-  await nextTick();
+const updateProduct = async () => {
+  if (!props.product?.id) {
+    alert('Không tìm thấy ID sản phẩm!');
+    return;
+  }
   try {
     const formData = new FormData();
     formData.append('name', form.name);
@@ -114,15 +137,11 @@ const createProduct = async () => {
       formData.append('image', form.image);
     }
 
-    for (let [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
-    await productApi.create(formData); // productApi.create phải set Content-Type = multipart/form-data
-
-    emit('created');
+    await productApi.update(props.product.id, formData); // phải hỗ trợ multipart/form-data
+    emit('updated');
     emit('close');
   } catch (error) {
-    console.error('Lỗi tạo sản phẩm:', error.response?.data || error);
+    console.error('Lỗi cập nhật sản phẩm:', error.response?.data || error);
   }
 };
 
@@ -130,4 +149,3 @@ onMounted(async () => {
   category.value = await categoryApi.getAll();
 });
 </script>
-
