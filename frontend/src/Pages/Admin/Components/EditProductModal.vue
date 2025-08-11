@@ -45,20 +45,19 @@
             <input v-model="form.quantity" type="number" class="mt-1 w-full border rounded-md p-2" />
           </div>
           <div>
-            <label class="block text-sm font-medium">Ảnh sản phẩm</label>
-            <input type="file" @change="onFileChange" accept="image/*" class="mt-1 w-full" />
-          </div>
-          <!-- Preview nhỏ -->
-          <div class="flex justify-center border border-dashed rounded-md p-2">
-            <img v-if="preview" :src="preview" alt="Preview" class="max-h-24 object-contain" />
-            <span v-else class="text-gray-400 text-sm">Preview ảnh</span>
+            <label class="block text-sm font-medium">Ảnh sản phẩm (link)</label>
+            <input v-model="form.image" type="text" placeholder="Nhập URL ảnh" class="mt-1 w-full border rounded-md p-2" />
+            <div v-if="form.image" class="mt-2">
+              <img :src="form.image" alt="Preview" class="max-h-40 rounded border" />
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Footer -->
       <div class="mt-6 flex justify-end">
-        <button @click="updateProduct"
+        <button
+          @click="handleSubmit"
           class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">
           Cập nhật
         </button>
@@ -68,82 +67,59 @@
 </template>
 
 <script setup>
-import { reactive, ref, watch, onMounted } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import productApi from '@/api/product';
 import categoryApi from '@/api/category';
 
 const props = defineProps({
   visible: Boolean,
-  product: {
-    type: Object,
-    default: () => ({})
-  }
+  product: Object,
 });
 const emit = defineEmits(['close', 'updated']);
 
 const category = ref([]);
-const preview = ref(null);
 
-const form = reactive({
-  name: '',
-  description: '',
-  price: '',
-  sku: '',
-  category: '',
-  quantity: '',
-  image: null
+const form = ref({
+  name: "",
+  description: "",
+  price: "",
+  sku: "",
+  category: "",
+  quantity: "",
+  image: "",
 });
 
-// Khi prop product thay đổi hoặc modal mở thì fill dữ liệu
+// Khi prop product thay đổi → fill form
 watch(
   () => props.product,
   (val) => {
-    if (val && val.id) {
-      form.name = val.name || '';
-      form.description = val.description || '';
-      form.price = val.price || '';
-      form.sku = val.sku || '';
-      form.category = val.category || '';
-      form.quantity = val.quantity || '';
-      preview.value = typeof val.image === 'string' ? val.image : null;
-      form.image = null; // reset để khi upload mới
+    if (val) {
+      form.value = {
+        name: val.name || "",
+        description: val.description || "",
+        price: val.price || "",
+        sku: val.sku || "",
+        category: String(val.category) || "",
+        quantity: val.quantity || "",
+        image: val.image || "",
+      };
     }
   },
   { immediate: true }
 );
 
-const onFileChange = (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    form.image = file;
-    preview.value = URL.createObjectURL(file);
-  }
-};
-
-const updateProduct = async () => {
-  if (!props.product?.id) {
-    alert('Không tìm thấy ID sản phẩm!');
-    return;
-  }
+async function handleSubmit() {
   try {
-    const formData = new FormData();
-    formData.append('name', form.name);
-    formData.append('description', form.description);
-    formData.append('price', Number(form.price));
-    formData.append('sku', form.sku);
-    formData.append('category', form.category);
-    formData.append('quantity', Number(form.quantity));
-    if (form.image) {
-      formData.append('image', form.image);
-    }
-
-    await productApi.update(props.product.id, formData); // phải hỗ trợ multipart/form-data
-    emit('updated');
-    emit('close');
-  } catch (error) {
-    console.error('Lỗi cập nhật sản phẩm:', error.response?.data || error);
+    const data = { ...form.value };
+    await productApi.update(props.product.id, data);
+    emit("updated");
+    emit("close");
+    alert("Cập nhật sản phẩm thành công!");
+  } catch (err) {
+    alert("Cập nhật sản phẩm thất bại!");
+    console.error(err);
   }
-};
+}
 
 onMounted(async () => {
   category.value = await categoryApi.getAll();

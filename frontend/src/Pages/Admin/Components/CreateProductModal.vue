@@ -47,13 +47,10 @@
           <div>
             <label class="block text-sm font-medium">Ảnh sản phẩm</label>
             <input v-model="form.image" class="mt-1 w-full border rounded-md p-2" />
-            <!-- <input type="file" @change="onFileChange" accept="image/*" class="mt-1 w-full" /> -->
-          </div>
-          <!-- Preview nhỏ -->
-          <!-- <div class="flex justify-center border border-dashed rounded-md p-2">
-            <img v-if="preview" :src="preview" alt="Preview" class="max-h-24 object-contain" />
-            <span v-else class="text-gray-400 text-sm">Preview ảnh</span>
-          </div> -->
+            <div v-if="form.image" class="mt-2">
+              <img :src="form.image" alt="Preview" class="max-h-40 rounded border" />
+            </div>
+          </div>          
         </div>
       </div>
 
@@ -69,7 +66,7 @@
 </template>
 
 <script setup>
-import { reactive, ref, onMounted, nextTick } from 'vue';
+import { reactive, ref, onMounted, nextTick, watch } from 'vue';
 import productApi from '@/api/product';
 import categoryApi from '@/api/category';
 
@@ -89,6 +86,21 @@ const form = reactive({
   category: '',
   quantity: '',
   image: null
+});
+
+watch(() => props.visible, (newVal) => {
+  if (newVal) {
+    Object.assign(form, {
+      name: '',
+      description: '',
+      price: '',
+      sku: '',
+      category: '',
+      quantity: '',
+      image: null
+    });
+    preview.value = null;
+  }
 });
 
 const onFileChange = (e) => {

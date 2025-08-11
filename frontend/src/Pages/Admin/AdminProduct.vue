@@ -118,7 +118,7 @@
                     </td>
                     <td class="px-4 py-3 flex flex-row">
                       <button
-                         @click="openEditProduct(product)"
+                        @click="openEditProduct(item)"
                         class="flex flex-row pt-[8px] pr-[18px] pb-[8px] pl-[18px] mt-4 mb-4 ml-2 mr-2 rounded-md font-medium bg-green-400 hover:opacity-75"
                       >
                         <svg
@@ -167,11 +167,11 @@
                 @created="loadProducts"
               />
               <EditProductModal
-            :visible="showEditModal"
-            :user="editingProduct"
-            @close="showEditModal = false"
-            @updated="loadProducts"
-          />
+                :visible="showEditModal"
+                :product="editingProduct"
+                @close="showEditModal = false"
+                @updated="loadProducts"
+              />
             </div>
           </div>
         </div>
